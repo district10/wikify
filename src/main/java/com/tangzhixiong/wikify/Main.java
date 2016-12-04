@@ -127,8 +127,8 @@ public class Main {
             }
         }
         // save to disk
-        writeXml(searchFullXml, Config.dstDirPath+"search.full.xml");
-        writeXml(searchNoteXml, Config.dstDirPath+"search.note.xml");
+        writeXml(searchFullXml, Config.dstDirPath+"/search.full.xml");
+        writeXml(searchNoteXml, Config.dstDirPath+"/search.note.xml");
     }
 
     public static void main(String[] args) {
