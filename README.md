@@ -14,6 +14,13 @@ run jar file
 java -jar target/wikify.jar
 # you can specify input/output dir by "-i <DIR>"/"--input <DIR>", "-o <DIR>"/"--output <DIR>".
 ```
+使用举例：
+
+为我的 [笔记](https://github.com/district10/notes) 生成搜索数据，用于页面搜索：
+
+```bash
+java -jar wikify.jar -bs '#main-body' -ns '#main-body > ul > li > dl' -i publish/ -o publish/
+```
 
 ## 参考
 
