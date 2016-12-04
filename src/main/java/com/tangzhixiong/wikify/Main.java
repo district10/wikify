@@ -133,16 +133,37 @@ public class Main {
 
     public static void main(String[] args) {
 
-        if (Config.srcDirPath == null) { Config.srcDirPath = "./"; }
-        if (Config.dstDirPath == null) { Config.dstDirPath = "./"; }
-
         for (int i = 0; i < args.length; ++i) {
             if (false) {
             } else if (args[i].equals("-i") || args[i].equals("--input")) {
-                Config.srcDirPath = args[i];
+                if (++i < args.length) { Config.srcDirPath = args[i]; }
             } else if (args[i].equals("-o") || args[i].equals("--output")) {
-                Config.dstDirPath = args[i];
+                if (++i < args.length) { Config.dstDirPath = args[i]; }
             }
+        }
+
+        if (Config.srcDirPath == null) { Config.srcDirPath = "."; }
+        final File srcDirFile = new File(Config.srcDirPath);
+        if (!srcDirFile.exists() || !srcDirFile.isDirectory()) {
+            System.err.println("Invalid input directory: "+Config.srcDirPath);
+            System.exit(1);
+        }
+
+        if (Config.dstDirPath == null) { Config.dstDirPath = "."; }
+        final File dstDirFile = new File(Config.dstDirPath);
+        if (dstDirFile.exists() && !dstDirFile.isDirectory()) {
+            System.err.println("Invalid output directory: "+Config.dstDirPath);
+            System.exit(2);
+        }
+        if (!dstDirFile.exists()) { dstDirFile.mkdirs(); }
+
+        // normalize srcDirPath/dstDirPath
+        try {
+            Config.srcDirPath = srcDirFile.getCanonicalPath();
+            Config.dstDirPath = dstDirFile.getCanonicalPath();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(3);
         }
 
         try {

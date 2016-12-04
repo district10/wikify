@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <search>
     <entry>
-        <title>(No Title) README.html</title>
+        <title>Wikify - Build wiki from my notes</title>
         <url>README.html</url>
-        <content type="html"><![CDATA[<h2 id="参考">参考</h2> 
+        <content type="html"><![CDATA[<div id="header"> 
+ <h1 class="title">Wikify - Build wiki from my notes</h1> 
+</div> 
+<p>build jar file:</p> 
+<div class="sourceCode">
+ <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mvn</span> package <span class="co"># target/wikify.jar</span></code></pre>
+</div> 
+<p>run jar file</p> 
+<div class="sourceCode">
+ <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">java</span> -jar target/wikify.jar
+<span class="co"># you can specify input/output dir by "-i &lt;DIR&gt;"/"--input &lt;DIR&gt;", "-o &lt;DIR&gt;"/"--output &lt;DIR&gt;".</span></code></pre>
+</div> 
+<h2 id="参考">参考</h2> 
 <ul> 
  <li><a href="http://hahack.com/codes/local-search-engine-for-hexo/#%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-hexo-generator-search">jQuery-based Local Search Engine for Hexo | HaHack</a></li> 
  <li><a href="https://github.com/PaicHyperionDev/hexo-generator-search">PaicHyperionDev/hexo-generator-search: A plugin to generate the site’s search data</a></li> 
+ <li><a href="http://wzpan.github.io/hexo-theme-freemind/search.xml" class="uri">http://wzpan.github.io/hexo-theme-freemind/search.xml</a></li> 
 </ul> 
 <h2 id="sample-notes">Sample Notes</h2> 
 <ul> 

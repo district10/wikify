@@ -1,10 +1,18 @@
 ---
-title: Wikify: Build wiki from my notes
+title: Wikify - Build wiki from my notes
 ---
 
+build jar file:
+
 ```bash
-mvn package
+mvn package # target/wikify.jar
+```
+
+run jar file
+
+```bash
 java -jar target/wikify.jar
+# you can specify input/output dir by "-i <DIR>"/"--input <DIR>", "-o <DIR>"/"--output <DIR>".
 ```
 
 ## 参考
