@@ -1,3 +1,5 @@
+package com.tangzhixiong.wikify;
+
 import com.sun.org.apache.xml.internal.serialize.OutputFormat;
 import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import org.jsoup.Jsoup;
@@ -7,16 +9,32 @@ import org.jsoup.select.Elements;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.StringWriter;
-import java.io.Writer;
+import java.io.*;
+import java.util.ArrayDeque;
 
 /**
  * Created by tzx on 2016/12/4.
  */
 
 public class Main {
+
+    public static void fillBundle(String srcDirPath) throws Exception {
+        final ArrayDeque<File> queue = new ArrayDeque<>();
+        queue.add(new File(srcDirPath));
+        while (!queue.isEmpty()) {
+            File pwd = queue.poll();
+            final File[] entries;
+            try {
+                entries = pwd.listFiles();
+            } catch (NullPointerException e) { continue; }
+            for (final File entry: entries) {
+                if (entry.isFile()) {
+                } else if (entry.isDirectory()) {
+                    queue.add(entry);
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
 
         // TODO: directory listing
@@ -58,3 +76,4 @@ public class Main {
 
     }
 }
+
