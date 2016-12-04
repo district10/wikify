@@ -1,15 +1,18 @@
 package com.tangzhixiong.wikify;
 
-import com.sun.org.apache.xml.internal.serialize.OutputFormat;
-import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.*;
+import javax.xml.transform.OutputKeys;
+import java.io.File;
 import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.util.ArrayDeque;
@@ -38,15 +41,15 @@ public class Main {
     }
 
     public static void writeXml(org.w3c.dom.Document doc, String path) {
-        try (
-            Writer searchFullXmlWriter = new FileWriter(path);
-        ) {
-            XMLSerializer serializer = new XMLSerializer(searchFullXmlWriter, new OutputFormat(doc, "UTF-8", true));
-            serializer.serialize(doc);
-            searchFullXmlWriter.close();
+        try {
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(path));
+            TransformerFactory tFactory = TransformerFactory.newInstance();
+            Transformer transformer = tFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.transform(source, result);
             System.out.println("XML search file saved to [" + path + "].");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -227,7 +230,7 @@ public class Main {
         try {
             Config.srcDirPath = srcDirFile.getCanonicalPath();
             Config.dstDirPath = dstDirFile.getCanonicalPath();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.exit(3);
         }
