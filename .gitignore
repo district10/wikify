@@ -15,4 +15,5 @@ hs_err_pid*
 /target
 .idea/
 
-*.xml
+/*.xml
+/publish/*.xml
