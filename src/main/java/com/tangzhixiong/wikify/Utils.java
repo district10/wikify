@@ -105,27 +105,3 @@ public class Utils {
         }
     }
 }
-
-/*
-// System.out.println(Config.segmenter.process(sentence, JiebaSegmenter.SegMode.INDEX).toString());
-if (!fulltext.isEmpty()) {
-    List<String> words = new ArrayList<>();
-    List<SegToken> tokens = Config.segmenter.process(fulltext, JiebaSegmenter.SegMode.INDEX);
-    HashSet<String> dict = new HashSet<>();
-    for (SegToken token : tokens) {
-        if (!dict.contains(token.word)) {
-            dict.add(token.word);
-            words.add(token.word);
-        }
-    }
-    // content.appendChild(searchFullXml.createCDATASection(fulltext));
-    // content.appendChild(searchFullXml.createCDATASection(words.toString()));
-
-    content.appendChild(searchFullXml.createCDATASection(sb.toString()));
-    org.w3c.dom.Element entry = searchFullXml.createElement("entry");
-    entry.appendChild(title);
-    entry.appendChild(url);
-    entry.appendChild(content);
-    searchFullRootElement.appendChild(entry);
-}
-*/

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<search>
+    <entry>
+        <content index="21" lang="cpp" type="html"><![CDATA[<span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+    <span class="kw">typedef</span> <span class="dt">void</span> (Testable::*bool_type)() <span class="dt">const</span>;
+    <span class="dt">void</span> this_type_does_not_support_comparisons() <span class="dt">const</span> {}
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+    <span class="kw">operator</span> bool_type() <span class="dt">const</span> {
+        <span class="kw">return</span> ok_==<span class="kw">true</span> ?  &amp;Testable::this_type_does_not_support_comparisons : <span class="dv">0</span>;
+    }
+};]]></content>
+    </entry>
+    <entry>
+        <content index="22" lang="bash" type="html"><![CDATA[<span class="kw">mvn</span> package <span class="co"># target/wikify.jar</span>]]></content>
+    </entry>
+    <entry>
+        <content index="23" lang="bash" type="html"><![CDATA[<span class="kw">java</span> -jar target/wikify.jar
+<span class="co"># you can specify input/output dir by "-i &lt;DIR&gt;"/"--input &lt;DIR&gt;", "-o &lt;DIR&gt;"/"--output &lt;DIR&gt;".</span>]]></content>
+    </entry>
+    <entry>
+        <content index="24" lang="bash" type="html"><![CDATA[<span class="kw">java</span> -jar wikify.jar -bs <span class="st">'#main-body'</span> -ns <span class="st">'#main-body &gt; ul &gt; li &gt; dl'</span> -i publish/ -o publish/]]></content>
+    </entry>
+</search>

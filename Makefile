@@ -16,6 +16,6 @@ target/wikify.jar: src/main/java/com/tangzhixiong/wikify/Main.java src/main/java
 	mvn package
 
 clean:
-	rm publish/*.html
-	rm generatedXml/*
+	rm publish/*.html -f
+	rm generatedXml/* -f
 	rm target -rf
