@@ -6,25 +6,24 @@ keywords:
   - java
 ---
 
-build jar file:
+## 使用方法
 
-```bash
-mvn package # target/wikify.jar
+```
+make
 ```
 
-run jar file
-
-```bash
-java -jar target/wikify.jar
-# you can specify input/output dir by "-i <DIR>"/"--input <DIR>", "-o <DIR>"/"--output <DIR>".
-```
-使用举例：
+## 使用举例
 
 为我的 [笔记](https://github.com/district10/notes) 生成搜索数据，用于页面搜索：
 
 ```bash
-java -jar wikify.jar -bs '#main-body' -ns '#main-body > ul > li > dl' -i publish/ -o publish/
+mkdir -p publish/_wikify
+java -jar wikify.jar -ps '#main-body' -ns '#main-body > ul > li > dl' -i publish/ -o publish/ -ccs 50 -ncs 50 -pcs 20
 ```
+
+生成的 xml 文件可以用于检索。我写了一个前端检索工具：[district10/searchy: Front-end of wikify](https://github.com/district10/searchy)。
+
+在线 DEMO：[Searchy](http://whudoc.qiniudn.com/2016/wikify_20161206/index.html)。
 
 ## 参考
 
