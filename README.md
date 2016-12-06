@@ -1,5 +1,9 @@
 ---
 title: Wikify - Build wiki from my notes
+keywords:
+  - wikify
+  - pandoc
+  - java
 ---
 
 build jar file:

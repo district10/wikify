@@ -330,3 +330,9 @@ qsort (x:xs) = qsort (filter (< x) xs) ++ [x] ++
             refs and see also
 
             -   [c++ - Is the safe-bool idiom obsolete in C++11? - Stack Overflow](http://stackoverflow.com/questions/6242768/is-the-safe-bool-idiom-obsolete-in-c11)
+
+`shitshitshit`
+
+```
+shitshitshitshitshitshit
+```

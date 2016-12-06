@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <search>
-    <entry>
-        <content index="11" lang="cpp" type="html"><![CDATA[<span class="dt">int</span> isalnum(    <span class="dt">int</span> c   );
+    <entry index="11">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="ot">#include &lt;ctype.h&gt;</span>
+
+<span class="dt">int</span> toupper( <span class="dt">int</span> c );
+<span class="dt">int</span> tolower( <span class="dt">int</span> c );]]></content>
+    </entry>
+    <entry index="12">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="dt">int</span> isalnum(    <span class="dt">int</span> c   );
 <span class="dt">int</span> isalpha(    <span class="dt">int</span> c   );
 <span class="dt">int</span> isascii(    <span class="dt">int</span> c   );
 <span class="dt">int</span> isblank(    <span class="dt">int</span> c   );
@@ -13,21 +23,27 @@
 <span class="dt">int</span> isspace(    <span class="dt">int</span> c   );
 <span class="dt">int</span> isxdigit(   <span class="dt">int</span> c   );]]></content>
     </entry>
-    <entry>
-        <content index="12" lang="cpp" type="html"><![CDATA[<span class="co">// even</span>
+    <entry index="13">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="co">// even</span>
 x % <span class="dv">2</span>
 <span class="co">// odd</span>
 x % <span class="dv">2</span> != <span class="dv">0</span>
 x &amp; <span class="bn">0x1</span>]]></content>
     </entry>
-    <entry>
-        <content index="13" lang="cpp" type="html"><![CDATA[<span class="co">// for int</span>
+    <entry index="14">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="co">// for int</span>
 a == b
 <span class="co">// for double</span>
 fabs(a-b) &lt; <span class="fl">1e-9</span>        <span class="co">// math.h</span>]]></content>
     </entry>
-    <entry>
-        <content index="14" lang="cpp" type="html"><![CDATA[<span class="ot">#include &lt;stdio.h&gt;</span>
+    <entry index="15">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="ot">#include &lt;stdio.h&gt;</span>
 
 FILE *fp = fopen(filename, <span class="st">"r"</span>);
 <span class="kw">while</span>( <span class="dv">2</span> == fscanf( fp, <span class="st">"</span><span class="ch">%d</span><span class="st"> </span><span class="ch">%s</span><span class="st">"</span>, &amp;index, buf ) ) {
@@ -38,8 +54,10 @@ fclose(fp);
 size_t fread(        <span class="dt">void</span> *ptr, size_t size, size_t nmemb, FILE *stream );
 size_t fwrite( <span class="dt">const</span> <span class="dt">void</span> *ptr, size_t size, size_t nmemb, FILE *stream );]]></content>
     </entry>
-    <entry>
-        <content index="15" lang="cpp" type="html"><![CDATA[<span class="ot">#include &lt;fstream&gt;</span>
+    <entry index="16">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="ot">#include &lt;fstream&gt;</span>
 
 std::ifstream file( filename.c_str(), ifstream::in );
 <span class="co">// 或者：std::ifstream file; file.open( filename.c_str(), ifstream::in );</span>
@@ -52,8 +70,10 @@ string line;
     <span class="co">// ...</span>
 }]]></content>
     </entry>
-    <entry>
-        <content index="16" lang="cpp" type="html"><![CDATA[<span class="co">// method 1</span>
+    <entry index="17">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="co">// method 1</span>
 <span class="kw">if</span> (some_type* p=get_some_type()) {
     <span class="co">// p is valid, use it</span>
 }
@@ -70,8 +90,10 @@ smart_ptr&lt;some_type&gt; p(get_some_type());
     <span class="co">// p is not valid, take proper action</span>
 }]]></content>
     </entry>
-    <entry>
-        <content index="17" lang="cpp" type="html"><![CDATA[<span class="co">// operator bool version</span>
+    <entry index="18">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="co">// operator bool version</span>
 <span class="kw">class</span> Testable {
     <span class="dt">bool</span> ok_;
 <span class="kw">public</span>:
@@ -85,26 +107,19 @@ smart_ptr&lt;some_type&gt; p(get_some_type());
     }
 };]]></content>
     </entry>
-    <entry>
-        <content index="18" lang="cpp" type="html"><![CDATA[<span class="kw">operator</span> <span class="dt">void</span>*() <span class="dt">const</span> {
+    <entry index="19">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="kw">operator</span> <span class="dt">void</span>*() <span class="dt">const</span> {
     <span class="kw">return</span> ok_==<span class="kw">true</span> ? <span class="kw">this</span> : <span class="dv">0</span>;
 }]]></content>
     </entry>
-    <entry>
-        <content index="19" lang="cpp" type="html"><![CDATA[Testable test;
+    <entry index="20">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[Testable test;
 
 <span class="co">// oops...</span>
 <span class="kw">delete</span> test;]]></content>
-    </entry>
-    <entry>
-        <content index="20" lang="cpp" type="html"><![CDATA[<span class="kw">class</span> Testable {
-    <span class="dt">bool</span> ok_;
-<span class="kw">public</span>:
-    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
-    <span class="kw">class</span> nested_class;         <span class="co">// no need to implement;</span>
-    <span class="kw">operator</span> <span class="dt">const</span> nested_class*() <span class="dt">const</span> {
-      <span class="kw">return</span> ok_ ? <span class="kw">reinterpret_cast</span>&lt;<span class="dt">const</span> nested_class*&gt;(<span class="kw">this</span>) : <span class="dv">0</span>;
-    }
-};]]></content>
     </entry>
 </search>

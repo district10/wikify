@@ -1,5 +1,6 @@
 package com.tangzhixiong.wikify;
 
+import com.hankcs.hanlp.HanLP;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,14 +16,21 @@ import java.util.*;
  */
 
 class Config {
+    public static String postSelector = "body";     // full text search
+    public static String noteSelector = "dl";       // note search
+
     public static String srcDirPath = ".";
     public static String dstDirPath = ".";
-    public static String bodySelector = "body";     // full text search
-    public static String noteSelector = "dl";       // note search
+
     public static LinkedHashSet<String> lineCodes = new LinkedHashSet<>();
     public static HashMap<String, HashSet<Integer>> codeRef = new HashMap<>();
-    public static int index = 0;
-    public static int chunksize = 10;
+
+    public static int codeIndex = 0;
+    public static int codeChunksize = 10;
+    public static int postIndex = 0;
+    public static int postChunksize = 5;
+    public static int noteIndex = 0;
+    public static int noteChunksize = 25;
 }
 
 public class Main {
@@ -37,26 +45,35 @@ public class Main {
         final DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         final DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
-        // search.full.xml
-        final org.w3c.dom.Document searchFullXml = docBuilder.newDocument();
-        final org.w3c.dom.Element searchFullRootElement = searchFullXml.createElement("search");
-        searchFullXml.appendChild(searchFullRootElement);
-
         // search.note.xml
         final org.w3c.dom.Document searchNoteXml = docBuilder.newDocument();
         final org.w3c.dom.Element searchNoteXmlRootElement = searchNoteXml.createElement("search");
+        searchNoteXmlRootElement.setAttribute("chunksize", Integer.toString(Config.noteChunksize));
         searchNoteXml.appendChild(searchNoteXmlRootElement);
+        // search.note.%d.xml
+        final org.w3c.dom.Document _searchNoteXml = docBuilder.newDocument();
+        final org.w3c.dom.Element _searchNoteXmlRootElement = _searchNoteXml.createElement("search");
+        _searchNoteXml.appendChild(_searchNoteXmlRootElement);
 
         // search.code.xml
         final org.w3c.dom.Document searchCodeXml = docBuilder.newDocument();
         final org.w3c.dom.Element searchCodeRootElement = searchCodeXml.createElement("search");
+        searchCodeRootElement.setAttribute("chunksize", Integer.toString(Config.codeChunksize));
         searchCodeXml.appendChild(searchCodeRootElement);
-        searchCodeRootElement.setAttribute("chunsize", Integer.toString(Config.chunksize));
+        // search.code.%d.xml
+        final org.w3c.dom.Document _searchCodeXml = docBuilder.newDocument();
+        final org.w3c.dom.Element _searchCodeXmlRootElement = _searchCodeXml.createElement("search");
+        _searchCodeXml.appendChild(_searchCodeXmlRootElement);
 
-        // search.code.block.%d.xml
-        final org.w3c.dom.Document searchCodeBlockXml = docBuilder.newDocument();
-        final org.w3c.dom.Element searchCodeBlockRootElement = searchCodeBlockXml.createElement("search");
-        searchCodeBlockXml.appendChild(searchCodeBlockRootElement);
+        // search.post.xml
+        final org.w3c.dom.Document searchPostXml = docBuilder.newDocument();
+        final org.w3c.dom.Element searchPostXmlRootElement = searchPostXml.createElement("search");
+        searchPostXmlRootElement.setAttribute("chunksize", Integer.toString(Config.postChunksize));
+        searchPostXml.appendChild(searchPostXmlRootElement);
+        // search.post.%d.xml
+        final org.w3c.dom.Document _searchPostXml = docBuilder.newDocument();
+        final org.w3c.dom.Element _searchPostXmlRootElement = _searchPostXml.createElement("search");
+        _searchPostXml.appendChild(_searchPostXmlRootElement);
 
         while (!queue.isEmpty()) {
             File pwd = queue.poll();
@@ -69,85 +86,107 @@ public class Main {
                 if (htmlDocumentFile.isDirectory()) {
                     queue.add(htmlDocumentFile);
                 } else if (htmlDocumentFile.isFile() && htmlDocumentFile.getAbsolutePath().endsWith(".html")) {
+
+                    ++Config.postIndex;
                     System.out.print("Processing [" + htmlDocumentFile.getCanonicalPath().replace("\\", "/") + "]...");
-
                     Document htmlDocument = Jsoup.parse(htmlDocumentFile, "UTF-8");
+
+                    // url & title
                     String urlPath = Utils.relativePath(srcDirFile.getCanonicalPath(), htmlDocumentFile.getCanonicalPath());
+                    String docTitle = htmlDocument.title();
+                    if (docTitle.isEmpty()) {
+                        docTitle = "(No Title) " + urlPath;
+                    }
 
-                    // search.full.xml
+                    // url
+                    org.w3c.dom.Element url = _searchPostXml.createElement("url");
+                    url.appendChild(_searchPostXml.createCDATASection(urlPath));
+
+                    // title
+                    org.w3c.dom.Element title = _searchPostXml.createElement("title");
+                    title.appendChild(_searchPostXml.createCDATASection(docTitle));
+
+                    // POST: search.post.%d.xml
                     {
-                        // url
-                        org.w3c.dom.Element url = searchFullXml.createElement("url");
-                        url.appendChild(searchFullXml.createCDATASection(urlPath));
-
-                        // title
-                        org.w3c.dom.Element title = searchFullXml.createElement("title");
-                        if (!htmlDocument.title().isEmpty()) {
-                            title.appendChild(searchFullXml.createCDATASection(htmlDocument.title()));
-                        } else {
-                            title.appendChild(searchFullXml.createCDATASection("(No Title) " + urlPath));
-                        }
-
                         // content
-                        org.w3c.dom.Element content = searchFullXml.createElement("content");
-                        content.setAttribute("type", "html");
-                        Elements terms = htmlDocument.select(Config.bodySelector);
+                        org.w3c.dom.Element content = _searchPostXml.createElement("content");
                         StringBuilder sb = new StringBuilder();
-                        for (Element ele: terms) { sb.append(ele.text()); }
+                        Elements terms = htmlDocument.select(Config.postSelector);
+                        for (Element ele: terms) { sb.append(ele.text()); sb.append(" "); }
+                        String fulltext = sb.toString().replaceAll("\\r?\\n", " ").replaceAll("\\s+", " ");
+                        content.appendChild(_searchPostXml.createCDATASection(fulltext));
 
-                        String fulltext = Utils.normalize(sb.toString());
-                        if (!fulltext.isEmpty()) {
-                            content.appendChild(searchFullXml.createCDATASection(Utils.normalize(sb.toString())));
-
-                            org.w3c.dom.Element entry = searchFullXml.createElement("entry");
-                            entry.appendChild(title);
-                            entry.appendChild(url);
-                            entry.appendChild(content);
-                            searchFullRootElement.appendChild(entry);
-                        }
+                        org.w3c.dom.Element entry = _searchPostXml.createElement("entry");
+                        entry.setAttribute("index", Integer.toString(Config.postIndex));
+                        entry.appendChild(url);
+                        entry.appendChild(title);
+                        entry.appendChild(content);
+                        _searchPostXmlRootElement.appendChild(entry);
                     }
 
-                    // search.note.xml
-                    Elements notes = htmlDocument.select(Config.noteSelector);
-                    for (final Element note: notes) {
-                        if (!note.text().isEmpty()) {
-                            org.w3c.dom.Element entry = searchNoteXml.createElement("entry");
-                            org.w3c.dom.Element url = searchNoteXml.createElement("url");
-                            url.appendChild(searchNoteXml.createCDATASection(urlPath));
-                            org.w3c.dom.Element content = searchNoteXml.createElement("content");
-                            content.setAttribute("type", "html");
-                            content.appendChild(searchNoteXml.createCDATASection(note.html()));
-                            entry.appendChild(url);
-                            entry.appendChild(content);
-                            searchNoteXmlRootElement.appendChild(entry);
-                        }
-                    }
-
-                    // search.code.xml
+                    // Note: search.note.xml & search.note.%d.xml
                     {
-                        // NOT: div.sourceCode > pre > code
-                        {
-                            for (final Element lineCode: htmlDocument.select("code")) {
-                                if (lineCode.text().length() < 5) { continue; }
-                                Element pa = lineCode.parent();
-                                Element gp = pa.parent();
-                                if (pa.nodeName().equals("pre") && gp.nodeName().equals("div") && gp.hasClass("sourceCode")) {
-                                    continue;
+                        Elements notes = htmlDocument.select(Config.noteSelector);
+                        for (final Element note: notes) {
+                            if (!note.text().isEmpty()) {
+                                ++Config.noteIndex;
+
+                                // search.note.xml
+                                {
+                                    // headline
+                                    org.w3c.dom.Element headline = searchNoteXml.createElement("headline");
+                                    if (note.select("dt").size() != 0) {
+                                        headline.appendChild(searchNoteXml.createCDATASection(note.select("dt").first().html()));
+                                    } else { // extract key sentence
+                                        List<String> keywordList = HanLP.extractKeyword(note.text(), 2);
+                                        headline.appendChild(searchNoteXml.createCDATASection(keywordList.toString()));
+                                    }
+
+                                    // keywords
+                                    List<String> keywordList = HanLP.extractKeyword(note.text().replaceAll("[\\pP\\p{Punct}]", " ").toLowerCase(), 5);
+                                    org.w3c.dom.Element keywords = searchNoteXml.createElement("keywords");
+                                    keywords.appendChild(searchNoteXml.createCDATASection(keywordList.toString()));
+
+                                    // entry
+                                    org.w3c.dom.Element entry = searchNoteXml.createElement("entry");
+                                    entry.setAttribute("index", Integer.toString(Config.noteIndex));
+                                    entry.appendChild(searchNoteXml.importNode(url, true));
+                                    entry.appendChild(searchNoteXml.importNode(title, true));
+                                    entry.appendChild(headline);
+                                    entry.appendChild(keywords);
+                                    searchNoteXmlRootElement.appendChild(entry);
                                 }
+
+                                // search.note.%d.xml
+                                {
+                                    org.w3c.dom.Element content = _searchNoteXml.createElement("content");
+                                    content.appendChild(_searchNoteXml.createCDATASection(note.html()));
+
+                                    org.w3c.dom.Element entry = _searchNoteXml.createElement("entry");
+                                    entry.setAttribute("index", Integer.toString(Config.noteIndex));
+                                    entry.appendChild(_searchNoteXml.importNode(url, true));
+                                    entry.appendChild(_searchNoteXml.importNode(title, true));
+                                    entry.appendChild(content);
+                                    _searchNoteXmlRootElement.appendChild(entry);
+                                }
+                            }
+                        }
+                    }
+
+                    // CODE: search.code.xml
+                    {
+                        for (final Element lineCode: htmlDocument.select("code")) {
+                            String text = lineCode.text();
+                            if (text.length() < 2) { continue; }
+                            if (!lineCode.parent().nodeName().equals("pre")) {
+                                // NOT: pre > code，line code (行内代码段)
                                 String outerHtml = lineCode.outerHtml();
                                 if (!Config.lineCodes.contains(outerHtml)) {
                                     Config.lineCodes.add(outerHtml);
                                 }
-                            }
-
-                        }
-                        // YES: div.sourceCode > pre > code
-                        {
-                            for (final Element blockCode: htmlDocument.select(".sourceCode > pre > code")) {
-                                String text = blockCode.text();
-                                if (text.replaceAll("\\s", "").replaceAll("\\r?\\n", "").isEmpty()) { continue; }
-
-                                ++Config.index;
+                            } else {
+                                // YES: pre > code，block code (块状代码段)
+                                ++Config.codeIndex;
 
                                 String lines[] = text.split("\\r?\\n");
                                 for (String line : lines) {
@@ -156,30 +195,59 @@ public class Main {
                                     if (!Config.codeRef.containsKey(key)) {
                                         Config.codeRef.put(key, new HashSet<>());
                                     }
-                                    Config.codeRef.get(key).add(Config.index);
+                                    Config.codeRef.get(key).add(Config.codeIndex);
                                 }
 
-                                org.w3c.dom.Element entry = searchCodeBlockXml.createElement("entry");
+                                org.w3c.dom.Element content = _searchCodeXml.createElement("content");
+                                String lang = lineCode.classNames().toString();
+                                content.setAttribute("lang", Utils.parseLanguage(lang));
+                                content.appendChild(_searchCodeXml.createCDATASection(lineCode.html()));
 
-                                org.w3c.dom.Element content = searchCodeBlockXml.createElement("content");
-                                content.setAttribute("index", Integer.toString(Config.index));
-
-                                String lang = blockCode.classNames().toString();
-                                if (lang.indexOf(' ') < 0) {
-                                    lang = "unknown";
-                                } else {
-                                    lang = lang.substring(lang.indexOf(' ')+1);
-                                    if (lang.endsWith("]")) {
-                                        lang = lang.substring(0, lang.length()-1);
-                                    }
-                                }
-                                content.setAttribute("lang", lang);
-                                content.setAttribute("type", "html");
-                                content.appendChild(searchCodeBlockXml.createCDATASection(blockCode.html()));
+                                org.w3c.dom.Element entry = _searchCodeXml.createElement("entry");
+                                entry.setAttribute("index", Integer.toString(Config.codeIndex));
+                                entry.appendChild(_searchCodeXml.importNode(url, true));
+                                entry.appendChild(_searchCodeXml.importNode(title, true));
                                 entry.appendChild(content);
-                                searchCodeBlockRootElement.appendChild(entry);
+                                _searchCodeXmlRootElement.appendChild(entry);
                             }
                         }
+                    }
+
+                    // POST: search.post.xml
+                    {
+                        // remove code, a
+                        htmlDocument.select("a,code").remove();
+
+                        Elements terms = htmlDocument.select(Config.postSelector);
+                        StringBuilder sb = new StringBuilder();
+                        for (Element ele: terms) { sb.append(ele.text()); sb.append(" "); }
+                        String fulltext = sb.toString()
+                                .replaceAll("\\r?\\n", " ")
+                                .replaceAll(" -< ", " ")
+                                .replaceAll("\\s+", " ");
+
+                        // keywords
+                        org.w3c.dom.Element keywords = searchPostXml.createElement("keywords");
+                        List<String> keywordList = HanLP.extractKeyword(
+                                fulltext.replaceAll("[\\pP\\p{Punct}]", " ").toLowerCase(), 50);
+                        // <meta name="keywords" content="pandoc, wikify" />
+                        for (Element element : htmlDocument.getElementsByAttributeValue("name", "keywords")) {
+                            keywordList.add(element.attr("content"));
+                        }
+                        keywords.appendChild(searchPostXml.createCDATASection(keywordList.toString()));
+
+                        // summary
+                        org.w3c.dom.Element summary = searchPostXml.createElement("summary");
+                        List<String> sentenceList = HanLP.extractSummary(fulltext, 5);
+                        summary.appendChild(searchPostXml.createCDATASection(sentenceList.toString()));
+
+                        org.w3c.dom.Element entry = searchPostXml.createElement("entry");
+                        entry.setAttribute("index", Integer.toString(Config.postIndex));
+                        entry.appendChild(searchPostXml.importNode(url, true));
+                        entry.appendChild(searchPostXml.importNode(title, true));
+                        entry.appendChild(keywords);
+                        entry.appendChild(summary);
+                        searchPostXmlRootElement.appendChild(entry);
                     }
 
                     System.out.print(" done.\n");
@@ -187,26 +255,28 @@ public class Main {
             }
         } // all files in dir processed
 
-        // search.code.xml
+        // CODE: search.code.xml
         {
             // line code
             {
-                for (String lineCode : Config.lineCodes) {
+                for (final String lineCode : Config.lineCodes) {
                     int start = lineCode.indexOf('>')+1;
                     int end = lineCode.lastIndexOf('<');
                     if (start > lineCode.length()) { start = 0; }
                     if (start >= end) { start = 0; end = lineCode.length(); }
                     String keyString = lineCode.substring(start, end);
 
-                    org.w3c.dom.Element entry = searchCodeXml.createElement("entry");
-                    entry.setAttribute("type", "line code");
-
+                    // key
                     org.w3c.dom.Element key = searchCodeXml.createElement("key");
                     key.appendChild(searchCodeXml.createCDATASection(keyString.replaceAll("\\s", "")));
 
+                    // code
                     org.w3c.dom.Element code = searchCodeXml.createElement("code");
                     code.appendChild(searchCodeXml.createCDATASection(lineCode));
 
+                    // entry
+                    org.w3c.dom.Element entry = searchCodeXml.createElement("entry");
+                    entry.setAttribute("type", "line code");
                     entry.appendChild(key);
                     entry.appendChild(code);
                     searchCodeRootElement.appendChild(entry);
@@ -215,15 +285,14 @@ public class Main {
             // block code (block is too big, so this is just ref to real code blocks)
             {
                 for (String keyString: Config.codeRef.keySet()) {
-                    org.w3c.dom.Element entry = searchCodeXml.createElement("entry");
-                    entry.setAttribute("type", "block code");
-
                     org.w3c.dom.Element key = searchCodeXml.createElement("key");
                     key.appendChild(searchCodeXml.createCDATASection(keyString));
 
                     org.w3c.dom.Element refs = searchCodeXml.createElement("refs");
                     refs.appendChild(searchCodeXml.createCDATASection(Config.codeRef.get(keyString).toString()));
 
+                    org.w3c.dom.Element entry = searchCodeXml.createElement("entry");
+                    entry.setAttribute("type", "block code");
                     entry.appendChild(key);
                     entry.appendChild(refs);
                     searchCodeRootElement.appendChild(entry);
@@ -233,10 +302,18 @@ public class Main {
 
         // save to disk
         System.out.println();
-        Utils.writeXml(searchFullXml, Config.dstDirPath+"/search.full.xml");
-        Utils.writeXml(searchNoteXml, Config.dstDirPath+"/search.note.xml");
-        Utils.writeXml(searchCodeXml, Config.dstDirPath+"/search.code.xml");
-        Utils.writeCodeBlocks(searchCodeBlockXml, Config.dstDirPath+"/search.code.%d.xml", Config.chunksize);
+        {
+            Utils.writeXml(searchCodeXml, Config.dstDirPath+"/search.code.xml");
+            Utils.writeCodeBlocks(_searchCodeXml, Config.dstDirPath+"/search.code.%d.xml", Config.codeChunksize);
+        }
+        {
+            Utils.writeXml(searchNoteXml, Config.dstDirPath+"/search.note.xml");
+            Utils.writeCodeBlocks(_searchNoteXml, Config.dstDirPath+"/search.note.%d.xml", Config.noteChunksize);
+        }
+        {
+            Utils.writeXml(searchPostXml, Config.dstDirPath+"/search.post.xml");
+            Utils.writeCodeBlocks(_searchPostXml, Config.dstDirPath+"/search.post.%d.xml", Config.postChunksize);
+        }
     }
 
     public static void main(String[] args) {
@@ -249,14 +326,26 @@ public class Main {
                 if (++i < args.length) { Config.srcDirPath = args[i]; }
             } else if (args[i].equals("-o") || args[i].equals("--output")) {
                 if (++i < args.length) { Config.dstDirPath = args[i]; }
-            } else if (args[i].equals("-bs") || args[i].equals("--bodySelector")) {
-                if (++i < args.length) { Config.bodySelector = args[i]; }
+            } else if (args[i].equals("-ps") || args[i].equals("--postSelector")) {
+                if (++i < args.length) { Config.postSelector = args[i]; }
             } else if (args[i].equals("-ns") || args[i].equals("--noteSelector")) {
                 if (++i < args.length) { Config.noteSelector = args[i]; }
-            } else if (args[i].equals("-cs") || args[i].equals("--chunksize")) {
-                if (++i < args.length) { Config.chunksize = Integer.valueOf(args[i]); }
+            } else if (args[i].equals("-ccs") || args[i].equals("--codeChunksize")) {
+                if (++i < args.length) { Config.codeChunksize = Integer.valueOf(args[i]); }
+            } else if (args[i].equals("-ncs") || args[i].equals("--noteChunksize")) {
+                if (++i < args.length) { Config.noteChunksize = Integer.valueOf(args[i]); }
+            } else if (args[i].equals("-pcs") || args[i].equals("--postChunksize")) {
+                if (++i < args.length) { Config.postChunksize = Integer.valueOf(args[i]); }
             }
         }
+
+        System.err.printf("__________ wikify  configs __________\n");
+        System.err.printf("Code chunksize: %d\n", Config.codeChunksize);
+        System.err.printf("Note chunksize: %d\n", Config.noteChunksize);
+        System.err.printf("Post chunksize: %d\n", Config.postChunksize);
+        System.err.printf("Post selector: \"%s\"\n", Config.postSelector);
+        System.err.printf("Note selector: \"%s\"\n", Config.noteSelector);
+        System.err.printf("-------------------------------------\n");
 
         final File srcDirFile = new File(Config.srcDirPath);
         if (!srcDirFile.exists() || !srcDirFile.isDirectory()) {

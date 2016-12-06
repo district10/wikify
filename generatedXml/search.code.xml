@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<search chunsize="10">
-    <entry type="line code">
-        <key><![CDATA[http://127.0.0.1:1080/pac?t=20161203153117736]]></key>
-        <code><![CDATA[<code>http://127.0.0.1:1080/pac?t=20161203153117736</code>]]></code>
-    </entry>
+<search chunksize="10">
     <entry type="line code">
         <key><![CDATA[printhelloisyourname.]]></key>
         <code><![CDATA[<code class="sourceCode cpp">print hello is your name.</code>]]></code>
@@ -11,12 +7,6 @@
     <entry type="line code">
         <key><![CDATA[ms-settings:network-proxy]]></key>
         <code><![CDATA[<code class="sourceCode html">ms-settings:network-proxy</code>]]></code>
-    </entry>
-    <entry type="line code">
-        <key><![CDATA[qsort[]<spanclass="fu">=</span>[]qsort(x<spanclass="fu">:</span>xs)<spanclass="fu">=</span>qsort(filter(<spanclass="fu">&lt;</span>x)xs)<spanclass="fu">++</span>[x]<spanclass="fu">++</span>qsort(filter(<spanclass="fu">&gt;=</span>x)xs)]]></key>
-        <code><![CDATA[<code class="sourceCode haskell">qsort []     <span class="fu">=</span> []
-qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<span class="fu">&lt;</span> x) xs) <span class="fu">++</span> [x] <span class="fu">++</span>
-               qsort (filter (<span class="fu">&gt;=</span> x) xs)</code>]]></code>
     </entry>
     <entry type="line code">
         <key><![CDATA[typename]]></key>
@@ -70,17 +60,21 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
         <key><![CDATA[operator!]]></key>
         <code><![CDATA[<code>operator!</code>]]></code>
     </entry>
+    <entry type="line code">
+        <key><![CDATA[shitshitshit]]></key>
+        <code><![CDATA[<code>shitshitshit</code>]]></code>
+    </entry>
     <entry type="block code">
         <key><![CDATA[if(some_type*p=get_some_type()){]]></key>
-        <refs><![CDATA[[16]]]></refs>
+        <refs><![CDATA[[17]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[typedefvoid(Testable::*bool_type)()const;]]></key>
-        <refs><![CDATA[[21]]]></refs>
+        <refs><![CDATA[[22]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[//even]]></key>
-        <refs><![CDATA[[12]]]></refs>
+        <refs><![CDATA[[13]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[doubley=2.7;]]></key>
@@ -92,83 +86,83 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
     </entry>
     <entry type="block code">
         <key><![CDATA[returnok_;]]></key>
-        <refs><![CDATA[[17]]]></refs>
+        <refs><![CDATA[[18]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[java-jartarget/wikify.jar]]></key>
-        <refs><![CDATA[[23]]]></refs>
+        <refs><![CDATA[[25]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[public:]]></key>
-        <refs><![CDATA[[17, 20, 21]]]></refs>
+        <refs><![CDATA[[18, 21, 22]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[operatorbool()const{]]></key>
-        <refs><![CDATA[[17]]]></refs>
+        <refs><![CDATA[[18]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[Type::NestedType*p;//declare]]></key>
-        <refs><![CDATA[[6]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[boolok_;]]></key>
-        <refs><![CDATA[[17, 20, 21]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[#include<stdio.h>]]></key>
-        <refs><![CDATA[[14]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[intisprint(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[Testabletest;]]></key>
-        <refs><![CDATA[[19]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[if(!file){exit(-1);}]]></key>
-        <refs><![CDATA[[15]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[booloperator!()const{]]></key>
-        <refs><![CDATA[[17]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[vector<int>nums;]]></key>
-        <refs><![CDATA[[9]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[Class::X*p;]]></key>
-        <refs><![CDATA[[6]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//...]]></key>
-        <refs><![CDATA[[14, 15]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[x%2]]></key>
-        <refs><![CDATA[[12]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[explicitTestable(boolb=true):ok_(b){}]]></key>
-        <refs><![CDATA[[17, 20, 21]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[ary[i]=newint[col_num];]]></key>
         <refs><![CDATA[[7]]]></refs>
     </entry>
     <entry type="block code">
-        <key><![CDATA[//fordouble]]></key>
+        <key><![CDATA[boolok_;]]></key>
+        <refs><![CDATA[[18, 21, 22]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[#include<stdio.h>]]></key>
+        <refs><![CDATA[[15]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[intisprint(intc);]]></key>
+        <refs><![CDATA[[12]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[Testabletest;]]></key>
+        <refs><![CDATA[[20]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[if(!file){exit(-1);}]]></key>
+        <refs><![CDATA[[16]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[booloperator!()const{]]></key>
+        <refs><![CDATA[[18]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[vector<int>nums;]]></key>
+        <refs><![CDATA[[10]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[Class::X*p;]]></key>
+        <refs><![CDATA[[7]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//...]]></key>
+        <refs><![CDATA[[16, 15]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[x%2]]></key>
         <refs><![CDATA[[13]]]></refs>
     </entry>
     <entry type="block code">
+        <key><![CDATA[explicitTestable(boolb=true):ok_(b){}]]></key>
+        <refs><![CDATA[[18, 21, 22]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[ary[i]=newint[col_num];]]></key>
+        <refs><![CDATA[[8]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//fordouble]]></key>
+        <refs><![CDATA[[14]]]></refs>
+    </entry>
+    <entry type="block code">
         <key><![CDATA[intisalnum(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
+        <refs><![CDATA[[12]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[#youcanspecifyinput/outputdirby"-i<DIR>"/"--input<DIR>","-o<DIR>"/"--output<DIR>".]]></key>
-        <refs><![CDATA[[23]]]></refs>
+        <refs><![CDATA[[25]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[usingnamespacestd;]]></key>
@@ -176,107 +170,107 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
     </entry>
     <entry type="block code">
         <key><![CDATA[classTestable{]]></key>
-        <refs><![CDATA[[17, 20, 21]]]></refs>
+        <refs><![CDATA[[18, 21, 22]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[inttolower(intc);]]></key>
-        <refs><![CDATA[[10]]]></refs>
+        <refs><![CDATA[[11]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[#include<fstream>]]></key>
-        <refs><![CDATA[[15]]]></refs>
+        <refs><![CDATA[[16]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[qsort(x:xs)=qsort(filter(<x)xs)++[x]++]]></key>
-        <refs><![CDATA[[4, 5]]]></refs>
+        <refs><![CDATA[[5, 6]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[intispunct(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
+        <refs><![CDATA[[12]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[//method2]]></key>
-        <refs><![CDATA[[16]]]></refs>
+        <refs><![CDATA[[17]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[//method1]]></key>
-        <refs><![CDATA[[16]]]></refs>
+        <refs><![CDATA[[17]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[java-jarwikify.jar-bs'#main-body'-ns'#main-body>ul>li>dl'-ipublish/-opublish/]]></key>
-        <refs><![CDATA[[24]]]></refs>
+        <refs><![CDATA[[26]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[//oops...]]></key>
-        <refs><![CDATA[[19]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[Type::object*p;//multiplication]]></key>
-        <refs><![CDATA[[6]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//delete[]ary;]]></key>
-        <refs><![CDATA[[7]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[inttoupper(intc);]]></key>
-        <refs><![CDATA[[10]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[while(2==fscanf(fp,"%d%s",&index,buf)){]]></key>
-        <refs><![CDATA[[14]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[vec.clear();//theperformancedependsonhow'syourdtor]]></key>
-        <refs><![CDATA[[8]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//pisnotvalid,takeproperaction]]></key>
-        <refs><![CDATA[[16]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[deletetest;]]></key>
-        <refs><![CDATA[[19]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[};]]></key>
-        <refs><![CDATA[[17, 20, 21]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[classnested_class;//noneedtoimplement;]]></key>
         <refs><![CDATA[[20]]]></refs>
     </entry>
     <entry type="block code">
-        <key><![CDATA[intisdigit(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[fabs(a-b)<1e-9//math.h]]></key>
-        <refs><![CDATA[[13]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[intisalpha(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[intisblank(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//XcanbeobjectofClass,oranestedclass.]]></key>
-        <refs><![CDATA[[6]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//cpp]]></key>
+        <key><![CDATA[Type::object*p;//multiplication]]></key>
         <refs><![CDATA[[7]]]></refs>
     </entry>
     <entry type="block code">
+        <key><![CDATA[//delete[]ary;]]></key>
+        <refs><![CDATA[[8]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[inttoupper(intc);]]></key>
+        <refs><![CDATA[[11]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[while(2==fscanf(fp,"%d%s",&index,buf)){]]></key>
+        <refs><![CDATA[[15]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[vec.clear();//theperformancedependsonhow'syourdtor]]></key>
+        <refs><![CDATA[[9]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//pisnotvalid,takeproperaction]]></key>
+        <refs><![CDATA[[17]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[deletetest;]]></key>
+        <refs><![CDATA[[20]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[};]]></key>
+        <refs><![CDATA[[18, 21, 22]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[classnested_class;//noneedtoimplement;]]></key>
+        <refs><![CDATA[[21]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[intisdigit(intc);]]></key>
+        <refs><![CDATA[[12]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[fabs(a-b)<1e-9//math.h]]></key>
+        <refs><![CDATA[[14]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[intisalpha(intc);]]></key>
+        <refs><![CDATA[[12]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[intisblank(intc);]]></key>
+        <refs><![CDATA[[12]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//XcanbeobjectofClass,oranestedclass.]]></key>
+        <refs><![CDATA[[7]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//cpp]]></key>
+        <refs><![CDATA[[8]]]></refs>
+    </entry>
+    <entry type="block code">
         <key><![CDATA[}]]></key>
-        <refs><![CDATA[[16, 17, 2, 18, 3, 20, 21, 7, 14, 15]]]></refs>
+        <refs><![CDATA[[16, 17, 2, 18, 3, 19, 21, 22, 8, 15]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[intiscntrl(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
+        <refs><![CDATA[[12]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[byteb=3;]]></key>
@@ -284,87 +278,91 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
     </entry>
     <entry type="block code">
         <key><![CDATA[//c]]></key>
-        <refs><![CDATA[[7]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[operatorbool_type()const{]]></key>
-        <refs><![CDATA[[21]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[FILE*fp=fopen(filename,"r");]]></key>
-        <refs><![CDATA[[14]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[voidthis_type_does_not_support_comparisons()const{}]]></key>
-        <refs><![CDATA[[21]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//pisvalid,useit]]></key>
-        <refs><![CDATA[[16]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//soambi'guityoccurs]]></key>
-        <refs><![CDATA[[6]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//voidstd::vector::reserve(size_typenew_cap);]]></key>
-        <refs><![CDATA[[9]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[intisxdigit(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//forint]]></key>
-        <refs><![CDATA[[13]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[vector<vector<int>>ary(row_num,vector<int>(col_num,0));]]></key>
-        <refs><![CDATA[[7]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[mvnpackage#target/wikify.jar]]></key>
-        <refs><![CDATA[[22]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[else{]]></key>
-        <refs><![CDATA[[16]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//operatorboolversion]]></key>
-        <refs><![CDATA[[17]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[fclose(fp);]]></key>
-        <refs><![CDATA[[14]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[while(getline(file,line)){]]></key>
-        <refs><![CDATA[[15]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[returnok_?reinterpret_cast<constnested_class*>(this):0;]]></key>
-        <refs><![CDATA[[20]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[size_tfread(void*ptr,size_tsize,size_tnmemb,FILE*stream);]]></key>
-        <refs><![CDATA[[14]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[operatorvoid*()const{]]></key>
-        <refs><![CDATA[[18]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[size_tfwrite(constvoid*ptr,size_tsize,size_tnmemb,FILE*stream);]]></key>
-        <refs><![CDATA[[14]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[vector<T>().swap(x);//clearxreallocating]]></key>
         <refs><![CDATA[[8]]]></refs>
     </entry>
     <entry type="block code">
-        <key><![CDATA[if(p.is_valid()){]]></key>
+        <key><![CDATA[operatorbool_type()const{]]></key>
+        <refs><![CDATA[[22]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[FILE*fp=fopen(filename,"r");]]></key>
+        <refs><![CDATA[[15]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[shitshitshitshitshitshit]]></key>
+        <refs><![CDATA[[23]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[voidthis_type_does_not_support_comparisons()const{}]]></key>
+        <refs><![CDATA[[22]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//pisvalid,useit]]></key>
+        <refs><![CDATA[[17]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//soambi'guityoccurs]]></key>
+        <refs><![CDATA[[7]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//voidstd::vector::reserve(size_typenew_cap);]]></key>
+        <refs><![CDATA[[10]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[intisxdigit(intc);]]></key>
+        <refs><![CDATA[[12]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//forint]]></key>
+        <refs><![CDATA[[14]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[vector<vector<int>>ary(row_num,vector<int>(col_num,0));]]></key>
+        <refs><![CDATA[[8]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[mvnpackage#target/wikify.jar]]></key>
+        <refs><![CDATA[[24]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[else{]]></key>
+        <refs><![CDATA[[17]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//operatorboolversion]]></key>
+        <refs><![CDATA[[18]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[fclose(fp);]]></key>
+        <refs><![CDATA[[15]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[while(getline(file,line)){]]></key>
         <refs><![CDATA[[16]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[returnok_?reinterpret_cast<constnested_class*>(this):0;]]></key>
+        <refs><![CDATA[[21]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[size_tfread(void*ptr,size_tsize,size_tnmemb,FILE*stream);]]></key>
+        <refs><![CDATA[[15]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[operatorvoid*()const{]]></key>
+        <refs><![CDATA[[19]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[size_tfwrite(constvoid*ptr,size_tsize,size_tnmemb,FILE*stream);]]></key>
+        <refs><![CDATA[[15]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[vector<T>().swap(x);//clearxreallocating]]></key>
+        <refs><![CDATA[[9]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[if(p.is_valid()){]]></key>
+        <refs><![CDATA[[17]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[intx=(int)y;]]></key>
@@ -376,15 +374,15 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
     </entry>
     <entry type="block code">
         <key><![CDATA[intisspace(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[x%2!=0]]></key>
         <refs><![CDATA[[12]]]></refs>
     </entry>
     <entry type="block code">
+        <key><![CDATA[x%2!=0]]></key>
+        <refs><![CDATA[[13]]]></refs>
+    </entry>
+    <entry type="block code">
         <key><![CDATA[smart_ptr<some_type>p(get_some_type());]]></key>
-        <refs><![CDATA[[16]]]></refs>
+        <refs><![CDATA[[17]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[inti=b;]]></key>
@@ -396,86 +394,90 @@ qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<s
     </entry>
     <entry type="block code">
         <key><![CDATA[//或者：std::ifstreamfile;file.open(filename.c_str(),ifstream::in);]]></key>
-        <refs><![CDATA[[15]]]></refs>
+        <refs><![CDATA[[16]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[operatorconstnested_class*()const{]]></key>
-        <refs><![CDATA[[20]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//or]]></key>
-        <refs><![CDATA[[8]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[x&0x1]]></key>
-        <refs><![CDATA[[12]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[//delete[]ary[i];]]></key>
-        <refs><![CDATA[[7]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[#include<ctype.h>]]></key>
-        <refs><![CDATA[[10]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[nums.reserve(25);]]></key>
-        <refs><![CDATA[[9]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[for(inti=0;i<row_num;++i){]]></key>
-        <refs><![CDATA[[7]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[returnok_==true?&Testable::this_type_does_not_support_comparisons:0;]]></key>
         <refs><![CDATA[[21]]]></refs>
     </entry>
     <entry type="block code">
-        <key><![CDATA[//odd]]></key>
-        <refs><![CDATA[[12]]]></refs>
+        <key><![CDATA[//or]]></key>
+        <refs><![CDATA[[9]]]></refs>
     </entry>
     <entry type="block code">
-        <key><![CDATA[intisgraph(intc);]]></key>
-        <refs><![CDATA[[11]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[returnok_==true?this:0;]]></key>
-        <refs><![CDATA[[18]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[a==b]]></key>
+        <key><![CDATA[x&0x1]]></key>
         <refs><![CDATA[[13]]]></refs>
     </entry>
     <entry type="block code">
-        <key><![CDATA[std::ifstreamfile(filename.c_str(),ifstream::in);]]></key>
-        <refs><![CDATA[[15]]]></refs>
+        <key><![CDATA[//delete[]ary[i];]]></key>
+        <refs><![CDATA[[8]]]></refs>
     </entry>
     <entry type="block code">
-        <key><![CDATA[return!ok_;]]></key>
-        <refs><![CDATA[[17]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[intisascii(intc);]]></key>
+        <key><![CDATA[#include<ctype.h>]]></key>
         <refs><![CDATA[[11]]]></refs>
     </entry>
     <entry type="block code">
+        <key><![CDATA[nums.reserve(25);]]></key>
+        <refs><![CDATA[[10]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[for(inti=0;i<row_num;++i){]]></key>
+        <refs><![CDATA[[8]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[returnok_==true?&Testable::this_type_does_not_support_comparisons:0;]]></key>
+        <refs><![CDATA[[22]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[//odd]]></key>
+        <refs><![CDATA[[13]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[intisgraph(intc);]]></key>
+        <refs><![CDATA[[12]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[returnok_==true?this:0;]]></key>
+        <refs><![CDATA[[19]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[a==b]]></key>
+        <refs><![CDATA[[14]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[std::ifstreamfile(filename.c_str(),ifstream::in);]]></key>
+        <refs><![CDATA[[16]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[return!ok_;]]></key>
+        <refs><![CDATA[[18]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[intisascii(intc);]]></key>
+        <refs><![CDATA[[12]]]></refs>
+    </entry>
+    <entry type="block code">
         <key><![CDATA[int**ary=newint*[row_num];]]></key>
-        <refs><![CDATA[[7]]]></refs>
+        <refs><![CDATA[[8]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[//或者：if(!file.is_open()){exit(-1);}]]></key>
-        <refs><![CDATA[[15]]]></refs>
+        <refs><![CDATA[[16]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[stringline;]]></key>
-        <refs><![CDATA[[15]]]></refs>
+        <refs><![CDATA[[16]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[http://127.0.0.1:1080/pac?t=20161203153117736]]></key>
+        <refs><![CDATA[[4]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[qsort(filter(>=x)xs)]]></key>
-        <refs><![CDATA[[4, 5]]]></refs>
+        <refs><![CDATA[[5, 6]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[qsort[]=[]]]></key>
-        <refs><![CDATA[[4, 5]]]></refs>
+        <refs><![CDATA[[5, 6]]]></refs>
     </entry>
 </search>

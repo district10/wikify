@@ -1,11 +1,14 @@
 .PHONY: build clean
 
-all: publish/README.html publish/note.html generatedXml/search.full.xml build
+MKDNS = $(wildcard publish/*.md)
+HTMLS = $(MKDNS:%.md=%.html)
+
+all: generatedXml/search.full.xml $(HTMLS) build
 
 %.html: %.md
-	pandoc --ascii -s -S $< -o $@
+	pandoc --ascii -s -S -f markdown+abbreviations+east_asian_line_breaks+emoji $< -o $@
 publish/%.html: %.md
-	pandoc --ascii -s -S $< -o $@
+	pandoc --ascii -s -S -f markdown+abbreviations+east_asian_line_breaks+emoji $< -o $@
 publish/search.full.xml: build
 
 generatedXml/search.full.xml: publish/README.html publish/note.html

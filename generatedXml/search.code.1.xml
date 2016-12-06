@@ -1,42 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <search>
-    <entry>
-        <content index="1" lang="java" type="html"><![CDATA[<span class="dt">byte</span>    b   =   <span class="dv">3</span>;
+    <entry index="1">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="java"><![CDATA[<span class="dt">byte</span>    b   =   <span class="dv">3</span>;
 <span class="dt">int</span>     i   =   b;
 
 <span class="dt">double</span>  y   =   <span class="fl">2.7</span>;
 <span class="dt">int</span>     x   =   (<span class="dt">int</span>)y;]]></content>
     </entry>
-    <entry>
-        <content index="2" lang="c" type="html"><![CDATA[<span class="kw">if</span> (okay) {
+    <entry index="2">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="c"><![CDATA[<span class="kw">if</span> (okay) {
     printf(<span class="st">"Hello World</span><span class="ch">\n</span><span class="st">"</span>);
 }]]></content>
     </entry>
-    <entry>
-        <content index="3" lang="cpp" type="html"><![CDATA[<span class="kw">using</span> <span class="kw">namespace</span> std;
+    <entry index="3">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="kw">using</span> <span class="kw">namespace</span> std;
 <span class="kw">if</span> (okay) {
     cout &lt;&lt; <span class="st">"Hello World"</span> &lt;&lt; endl;
 }]]></content>
     </entry>
-    <entry>
-        <content index="4" lang="haskell" type="html"><![CDATA[qsort []     <span class="fu">=</span> []
+    <entry index="4">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="unknown"><![CDATA[http://127.0.0.1:1080/pac?t=20161203153117736]]></content>
+    </entry>
+    <entry index="5">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="haskell"><![CDATA[qsort []     <span class="fu">=</span> []
 qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<span class="fu">&lt;</span> x) xs) <span class="fu">++</span> [x] <span class="fu">++</span>
                qsort (filter (<span class="fu">&gt;=</span> x) xs)]]></content>
     </entry>
-    <entry>
-        <content index="5" lang="haskell" type="html"><![CDATA[qsort []     <span class="fu">=</span> []
+    <entry index="6">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="haskell"><![CDATA[qsort []     <span class="fu">=</span> []
 qsort (x<span class="fu">:</span>xs) <span class="fu">=</span> qsort (filter (<span class="fu">&lt;</span> x) xs) <span class="fu">++</span> [x] <span class="fu">++</span>
                qsort (filter (<span class="fu">&gt;=</span> x) xs)]]></content>
     </entry>
-    <entry>
-        <content index="6" lang="cpp" type="html"><![CDATA[Class::X *p;
+    <entry index="7">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[Class::X *p;
 <span class="co">// X can be object of Class, or a nested class.</span>
 <span class="co">// so ambi'guity occurs</span>
 Type::NestedType   * p;         <span class="co">// declare</span>
 Type::object * p;               <span class="co">// multiplication</span>]]></content>
     </entry>
-    <entry>
-        <content index="7" lang="cpp" type="html"><![CDATA[<span class="co">// c</span>
+    <entry index="8">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="co">// c</span>
 <span class="dt">int</span> **ary = <span class="kw">new</span> <span class="dt">int</span>*[row_num];
 <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; row_num; ++i) {
     ary[i] = <span class="kw">new</span> <span class="dt">int</span>[col_num];
@@ -47,21 +66,19 @@ Type::object * p;               <span class="co">// multiplication</span>]]></co
 <span class="co">// cpp</span>
 vector&lt;vector&lt;<span class="dt">int</span>&gt; &gt; ary(row_num, vector&lt;<span class="dt">int</span>&gt;(col_num, <span class="dv">0</span>));]]></content>
     </entry>
-    <entry>
-        <content index="8" lang="cpp" type="html"><![CDATA[vec.clear();                <span class="co">// the performance depends on how's your dtor</span>
+    <entry index="9">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[vec.clear();                <span class="co">// the performance depends on how's your dtor</span>
 
 <span class="co">// or</span>
 vector&lt;T&gt;().swap( x );      <span class="co">// clear x reallocating</span>]]></content>
     </entry>
-    <entry>
-        <content index="9" lang="cpp" type="html"><![CDATA[<span class="co">// void std::vector::reserve( size_type new_cap );</span>
+    <entry index="10">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="co">// void std::vector::reserve( size_type new_cap );</span>
 vector&lt;<span class="dt">int</span>&gt; nums;
 nums.reserve( <span class="dv">25</span> );]]></content>
-    </entry>
-    <entry>
-        <content index="10" lang="cpp" type="html"><![CDATA[<span class="ot">#include &lt;ctype.h&gt;</span>
-
-<span class="dt">int</span> toupper( <span class="dt">int</span> c );
-<span class="dt">int</span> tolower( <span class="dt">int</span> c );]]></content>
     </entry>
 </search>

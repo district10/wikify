@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<search>
+    <entry index="1">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ <a href="https://www.douban.com/people/sting999/status/1918804013/">sting 的广播：博士后</a>
+</dt> 
+<dd>
+ <p>现在国内高校都在大肆扩张博士后或者“师资”博士后，成百上千的招博士后，实际上是变相的将青年博士奴工化的方式，能够做完博士后留下成为正式教师的人数非常的少，而且越来越少。只要打听一下该校的教师编制和正在招的博士后人数的比例就不难看出来。即将找工作的同学们慎之。</p> 
+ <p>现博士毕业找到固定职位确实非常难了，有学校广撒网招收博后（如广东某校），有些学校广撒网招专职科研岗（如南京某校），往往给的待遇确实很高，但是基本大部分都很难留下，一拿到面上基金的师姐也忧心忡忡担心能不能留下，基本上博士都被当论文狗来使用，好多人博后后者专职留不下，然后悲催人生。</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="2">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ 网络设置
+</dt> 
+<dd>
+ <p>url: <code class="sourceCode html">ms-settings:network-proxy</code></p> 
+ <dl> 
+  <dt>
+   500 Internal Privoxy Error
+  </dt> 
+  <dd>
+   <p>Privoxy encountered an error while processing your request:</p> 
+   <p>Could not load template file no-server-data or one of its included components.</p> 
+   <p>Please contact your proxy administrator.</p> 
+   <p>If you are the proxy administrator, please put the required file(s)in the (confdir)/templates directory. The location of the (confdir) directory is specified in the main Privoxy config file. (It’s typically the Privoxy install directory).</p> 
+  </dd> 
+ </dl> 
+</dd>]]></content>
+    </entry>
+    <entry index="3">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ 500 Internal Privoxy Error
+</dt> 
+<dd>
+ <p>Privoxy encountered an error while processing your request:</p> 
+ <p>Could not load template file no-server-data or one of its included components.</p> 
+ <p>Please contact your proxy administrator.</p> 
+ <p>If you are the proxy administrator, please put the required file(s)in the (confdir)/templates directory. The location of the (confdir) directory is specified in the main Privoxy config file. (It’s typically the Privoxy install directory).</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="4">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ ambiguity: declaration or multiplication? -&lt;
+</dt> 
+<dd>
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp">Class::X *p;
+<span class="co">// X can be object of Class, or a nested class.</span>
+<span class="co">// so ambi'guity occurs</span>
+Type::NestedType   * p;         <span class="co">// declare</span>
+Type::object * p;               <span class="co">// multiplication</span></code></pre>
+ </div> 
+ <p>通常在用 template 的时候可能编译器无法知道到底是何种情况，可以加上 <code>typename</code> 即用 <code>typename Type::NestedType *p</code>。</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="5">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ 2d-vector is esier to use -&lt;
+</dt> 
+<dd>
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// c</span>
+<span class="dt">int</span> **ary = <span class="kw">new</span> <span class="dt">int</span>*[row_num];
+<span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; row_num; ++i) {
+    ary[i] = <span class="kw">new</span> <span class="dt">int</span>[col_num];
+    <span class="co">// delete[] ary[i];</span>
+}
+<span class="co">// delete[] ary;</span>
+
+<span class="co">// cpp</span>
+vector&lt;vector&lt;<span class="dt">int</span>&gt; &gt; ary(row_num, vector&lt;<span class="dt">int</span>&gt;(col_num, <span class="dv">0</span>));</code></pre>
+ </div> 
+ <p>make sure to clear it’s contents when necessary.</p> 
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp">vec.clear();                <span class="co">// the performance depends on how's your dtor</span>
+
+<span class="co">// or</span>
+vector&lt;T&gt;().swap( x );      <span class="co">// clear x reallocating</span></code></pre>
+ </div> 
+ <p>refs and see also</p> 
+ <ul> 
+  <li><a href="http://www.cplusplus.com/reference/vector/vector/clear/">vector::clear - C++ Reference</a></li> 
+  <li><a href="http://stackoverflow.com/questions/16420357/c-fastest-way-to-clear-or-erase-a-vector">performance - C++ fastest way to clear or erase a vector - Stack Overflow</a></li> 
+ </ul> 
+</dd>]]></content>
+    </entry>
+    <entry index="6">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ 使用 reserve 来避免不必要的重新分配 -&lt;
+</dt> 
+<dd>
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// void std::vector::reserve( size_type new_cap );</span>
+vector&lt;<span class="dt">int</span>&gt; nums;
+nums.reserve( <span class="dv">25</span> );</code></pre>
+ </div> 
+ <p>但不要以为 <code>size()</code> 也变了。你可以用 <code>resize( int num )</code>。</p> 
+ <p>refs and see also</p> 
+ <ul> 
+  <li><a href="http://en.cppreference.com/w/cpp/container/vector/reserve">std::vector::reserve - cppreference.com</a></li> 
+ </ul> 
+</dd>]]></content>
+    </entry>
+    <entry index="7">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ tolower, toupper, isalpha -&lt;
+</dt> 
+<dd>
+ <p>defined in <code>&lt;ctype.h&gt;</code> or <code>&lt;cctype&gt;</code> (<code>std::tolower</code>).</p> 
+ <p><strong>tolower, touppper</strong></p> 
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include &lt;ctype.h&gt;</span>
+
+<span class="dt">int</span> toupper( <span class="dt">int</span> c );
+<span class="dt">int</span> tolower( <span class="dt">int</span> c );</code></pre>
+ </div> 
+ <p>converts the letter c to upper/lower case, if possible.</p> 
+ <p>if not ASCII, or EOF, the behavior is undefined.</p> 
+ <p><strong>isalpha, isspace, isdigit, isalnum, isxdigit</strong></p> 
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="dt">int</span> isalnum(    <span class="dt">int</span> c   );
+<span class="dt">int</span> isalpha(    <span class="dt">int</span> c   );
+<span class="dt">int</span> isascii(    <span class="dt">int</span> c   );
+<span class="dt">int</span> isblank(    <span class="dt">int</span> c   );
+<span class="dt">int</span> iscntrl(    <span class="dt">int</span> c   );
+<span class="dt">int</span> isdigit(    <span class="dt">int</span> c   );
+<span class="dt">int</span> isgraph(    <span class="dt">int</span> c   );
+<span class="dt">int</span> isprint(    <span class="dt">int</span> c   );
+<span class="dt">int</span> ispunct(    <span class="dt">int</span> c   );
+<span class="dt">int</span> isspace(    <span class="dt">int</span> c   );
+<span class="dt">int</span> isxdigit(   <span class="dt">int</span> c   );</code></pre>
+ </div> 
+</dd>]]></content>
+    </entry>
+    <entry index="8">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ even 
+ <em>vs</em> odd，奇偶数判断 -&lt;
+</dt> 
+<dd>
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// even</span>
+x % <span class="dv">2</span>
+<span class="co">// odd</span>
+x % <span class="dv">2</span> != <span class="dv">0</span>
+x &amp; <span class="bn">0x1</span></code></pre>
+ </div> 
+</dd>]]></content>
+    </entry>
+    <entry index="9">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ equal? float/double 数的判等 -&lt;
+</dt> 
+<dd>
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// for int</span>
+a == b
+<span class="co">// for double</span>
+fabs(a-b) &lt; <span class="fl">1e-9</span>        <span class="co">// math.h</span></code></pre>
+ </div> 
+</dd>]]></content>
+    </entry>
+    <entry index="10">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ 文件读写，用 FILE，fscanf 或者 ifstream，getline -&lt;
+</dt> 
+<dd>
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include &lt;stdio.h&gt;</span>
+
+FILE *fp = fopen(filename, <span class="st">"r"</span>);
+<span class="kw">while</span>( <span class="dv">2</span> == fscanf( fp, <span class="st">"</span><span class="ch">%d</span><span class="st"> </span><span class="ch">%s</span><span class="st">"</span>, &amp;index, buf ) ) {
+    <span class="co">// ...</span>
+}
+fclose(fp);
+
+size_t fread(        <span class="dt">void</span> *ptr, size_t size, size_t nmemb, FILE *stream );
+size_t fwrite( <span class="dt">const</span> <span class="dt">void</span> *ptr, size_t size, size_t nmemb, FILE *stream );</code></pre>
+ </div> 
+ <p>虽然你可能喜欢 <code>fopen</code>（就跟我以前一样），但我推荐用 C++ 的 stream，因为它更安全（不是指针，没有泄露危险）。</p> 
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="ot">#include &lt;fstream&gt;</span>
+
+std::ifstream file( filename.c_str(), ifstream::in );
+<span class="co">// 或者：std::ifstream file; file.open( filename.c_str(), ifstream::in );</span>
+
+<span class="kw">if</span> ( !file ) { exit(<span class="dv">-1</span>); }
+<span class="co">// 或者：if ( !file.is_open() ) { exit(-1); }</span>
+
+string line;
+<span class="kw">while</span> ( getline(file, line) ) {
+    <span class="co">// ...</span>
+}</code></pre>
+ </div> 
+ <p>这个 <code>if( !file )</code> 是因为 file 重载了 <code>operator void *</code>，这句话等同于 <code>if( NULL == (void *)file )</code>，见 <a href="http://program.upc.edu.cn/CLibrary/iostream/ios/operator_voidpt.html">ios::operator void* - C++ Reference</a>。</p> 
+ <dl> 
+  <dt>
+   <a href="http://www.artima.com/cppsource/safebool.html">The Safe Bool Idiom</a> -&lt;
+  </dt> 
+  <dd>
+   <p><strong>Learn how to validate objects in a boolean context without the usual harmful side effects.</strong></p> 
+   <dl> 
+    <dt>
+     The Goal -&lt;
+    </dt> 
+    <dd>
+     <p>Test their validity in Boolean contexts</p> 
+     <div class="sourceCode">
+      <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// method 1</span>
+<span class="kw">if</span> (some_type* p=get_some_type()) {
+    <span class="co">// p is valid, use it</span>
+}
+<span class="kw">else</span> {
+    <span class="co">// p is not valid, take proper action</span>
+}
+
+<span class="co">// method 2</span>
+smart_ptr&lt;some_type&gt; p(get_some_type());
+<span class="kw">if</span> (p.is_valid()) {
+    <span class="co">// p is valid, use it</span>
+}
+<span class="kw">else</span> {
+    <span class="co">// p is not valid, take proper action</span>
+}</code></pre>
+     </div> 
+    </dd> 
+    <dt>
+     The Obvious Approach Is 
+     <code>operator bool</code>, and also, the Not Exactly Obvious, 
+     <code>operator!</code> -&lt;
+    </dt> 
+    <dd>
+     <div class="sourceCode">
+      <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// operator bool version</span>
+<span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+
+    <span class="kw">operator</span> <span class="dt">bool</span>() <span class="dt">const</span> {
+        <span class="kw">return</span> ok_;
+    }
+    <span class="dt">bool</span> <span class="kw">operator</span>!() <span class="dt">const</span> {
+        <span class="kw">return</span> !ok_;
+    }
+};</code></pre>
+     </div> 
+    </dd> 
+    <dt>
+     A Seemingly Innocent Approach: 
+     <code>operator void *</code> -&lt;
+    </dt> 
+    <dd>
+     <div class="sourceCode">
+      <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="kw">operator</span> <span class="dt">void</span>*() <span class="dt">const</span> {
+    <span class="kw">return</span> ok_==<span class="kw">true</span> ? <span class="kw">this</span> : <span class="dv">0</span>;
+}</code></pre>
+     </div> 
+     <p>good? see this:</p> 
+     <div class="sourceCode">
+      <pre class="sourceCode cpp"><code class="sourceCode cpp">Testable test;
+
+<span class="co">// oops...</span>
+<span class="kw">delete</span> test;</code></pre>
+     </div> 
+     <p>If you think that this situation can be saved with a little const trickery, think again: The C++ Standard explicitly allows delete expressions with pointers to const types.</p> 
+    </dd> 
+    <dt>
+     Almost Getting There with a Nested Class -&lt;
+    </dt> 
+    <dd>
+     <p>In 1996, Don Box wrote about a very clever technique in his C++ Report column a technique originally created to support testing for nullness that almost does what we came here for. It involves a conversion function to a nested type (that doesn’t even need to be defined), like so:</p> 
+     <div class="sourceCode">
+      <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+    <span class="kw">class</span> nested_class;         <span class="co">// no need to implement;</span>
+    <span class="kw">operator</span> <span class="dt">const</span> nested_class*() <span class="dt">const</span> {
+      <span class="kw">return</span> ok_ ? <span class="kw">reinterpret_cast</span>&lt;<span class="dt">const</span> nested_class*&gt;(<span class="kw">this</span>) : <span class="dv">0</span>;
+    }
+};</code></pre>
+     </div> 
+    </dd> 
+    <dt>
+     The Safe Bool Idiom -&lt;
+    </dt> 
+    <dd>
+     <p>It’s time to make these tests safe. Remember that we need to avoid unsafe conversions that allow for erroneous usage. We must also avoid overloading issues, and we definitely shouldn’t allow deletion through the conversion. So, what do we do? Without further ado, let me give you the solution in code.</p> 
+     <div class="sourceCode">
+      <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+    <span class="kw">typedef</span> <span class="dt">void</span> (Testable::*bool_type)() <span class="dt">const</span>;
+    <span class="dt">void</span> this_type_does_not_support_comparisons() <span class="dt">const</span> {}
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+    <span class="kw">operator</span> bool_type() <span class="dt">const</span> {
+        <span class="kw">return</span> ok_==<span class="kw">true</span> ?  &amp;Testable::this_type_does_not_support_comparisons : <span class="dv">0</span>;
+    }
+};</code></pre>
+     </div> 
+    </dd> 
+   </dl> 
+   <p>refs and see also</p> 
+   <ul> 
+    <li><a href="http://stackoverflow.com/questions/6242768/is-the-safe-bool-idiom-obsolete-in-c11">c++ - Is the safe-bool idiom obsolete in C++11? - Stack Overflow</a></li> 
+   </ul> 
+  </dd> 
+ </dl> 
+</dd>]]></content>
+    </entry>
+    <entry index="11">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ <a href="http://www.artima.com/cppsource/safebool.html">The Safe Bool Idiom</a> -&lt;
+</dt> 
+<dd>
+ <p><strong>Learn how to validate objects in a boolean context without the usual harmful side effects.</strong></p> 
+ <dl> 
+  <dt>
+   The Goal -&lt;
+  </dt> 
+  <dd>
+   <p>Test their validity in Boolean contexts</p> 
+   <div class="sourceCode">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// method 1</span>
+<span class="kw">if</span> (some_type* p=get_some_type()) {
+    <span class="co">// p is valid, use it</span>
+}
+<span class="kw">else</span> {
+    <span class="co">// p is not valid, take proper action</span>
+}
+
+<span class="co">// method 2</span>
+smart_ptr&lt;some_type&gt; p(get_some_type());
+<span class="kw">if</span> (p.is_valid()) {
+    <span class="co">// p is valid, use it</span>
+}
+<span class="kw">else</span> {
+    <span class="co">// p is not valid, take proper action</span>
+}</code></pre>
+   </div> 
+  </dd> 
+  <dt>
+   The Obvious Approach Is 
+   <code>operator bool</code>, and also, the Not Exactly Obvious, 
+   <code>operator!</code> -&lt;
+  </dt> 
+  <dd>
+   <div class="sourceCode">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// operator bool version</span>
+<span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+
+    <span class="kw">operator</span> <span class="dt">bool</span>() <span class="dt">const</span> {
+        <span class="kw">return</span> ok_;
+    }
+    <span class="dt">bool</span> <span class="kw">operator</span>!() <span class="dt">const</span> {
+        <span class="kw">return</span> !ok_;
+    }
+};</code></pre>
+   </div> 
+  </dd> 
+  <dt>
+   A Seemingly Innocent Approach: 
+   <code>operator void *</code> -&lt;
+  </dt> 
+  <dd>
+   <div class="sourceCode">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="kw">operator</span> <span class="dt">void</span>*() <span class="dt">const</span> {
+    <span class="kw">return</span> ok_==<span class="kw">true</span> ? <span class="kw">this</span> : <span class="dv">0</span>;
+}</code></pre>
+   </div> 
+   <p>good? see this:</p> 
+   <div class="sourceCode">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp">Testable test;
+
+<span class="co">// oops...</span>
+<span class="kw">delete</span> test;</code></pre>
+   </div> 
+   <p>If you think that this situation can be saved with a little const trickery, think again: The C++ Standard explicitly allows delete expressions with pointers to const types.</p> 
+  </dd> 
+  <dt>
+   Almost Getting There with a Nested Class -&lt;
+  </dt> 
+  <dd>
+   <p>In 1996, Don Box wrote about a very clever technique in his C++ Report column a technique originally created to support testing for nullness that almost does what we came here for. It involves a conversion function to a nested type (that doesn’t even need to be defined), like so:</p> 
+   <div class="sourceCode">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+    <span class="kw">class</span> nested_class;         <span class="co">// no need to implement;</span>
+    <span class="kw">operator</span> <span class="dt">const</span> nested_class*() <span class="dt">const</span> {
+      <span class="kw">return</span> ok_ ? <span class="kw">reinterpret_cast</span>&lt;<span class="dt">const</span> nested_class*&gt;(<span class="kw">this</span>) : <span class="dv">0</span>;
+    }
+};</code></pre>
+   </div> 
+  </dd> 
+  <dt>
+   The Safe Bool Idiom -&lt;
+  </dt> 
+  <dd>
+   <p>It’s time to make these tests safe. Remember that we need to avoid unsafe conversions that allow for erroneous usage. We must also avoid overloading issues, and we definitely shouldn’t allow deletion through the conversion. So, what do we do? Without further ado, let me give you the solution in code.</p> 
+   <div class="sourceCode">
+    <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+    <span class="kw">typedef</span> <span class="dt">void</span> (Testable::*bool_type)() <span class="dt">const</span>;
+    <span class="dt">void</span> this_type_does_not_support_comparisons() <span class="dt">const</span> {}
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+    <span class="kw">operator</span> bool_type() <span class="dt">const</span> {
+        <span class="kw">return</span> ok_==<span class="kw">true</span> ?  &amp;Testable::this_type_does_not_support_comparisons : <span class="dv">0</span>;
+    }
+};</code></pre>
+   </div> 
+  </dd> 
+ </dl> 
+ <p>refs and see also</p> 
+ <ul> 
+  <li><a href="http://stackoverflow.com/questions/6242768/is-the-safe-bool-idiom-obsolete-in-c11">c++ - Is the safe-bool idiom obsolete in C++11? - Stack Overflow</a></li> 
+ </ul> 
+</dd>]]></content>
+    </entry>
+    <entry index="12">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content><![CDATA[<dt>
+ The Goal -&lt;
+</dt> 
+<dd>
+ <p>Test their validity in Boolean contexts</p> 
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// method 1</span>
+<span class="kw">if</span> (some_type* p=get_some_type()) {
+    <span class="co">// p is valid, use it</span>
+}
+<span class="kw">else</span> {
+    <span class="co">// p is not valid, take proper action</span>
+}
+
+<span class="co">// method 2</span>
+smart_ptr&lt;some_type&gt; p(get_some_type());
+<span class="kw">if</span> (p.is_valid()) {
+    <span class="co">// p is valid, use it</span>
+}
+<span class="kw">else</span> {
+    <span class="co">// p is not valid, take proper action</span>
+}</code></pre>
+ </div> 
+</dd> 
+<dt>
+ The Obvious Approach Is 
+ <code>operator bool</code>, and also, the Not Exactly Obvious, 
+ <code>operator!</code> -&lt;
+</dt> 
+<dd>
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="co">// operator bool version</span>
+<span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+
+    <span class="kw">operator</span> <span class="dt">bool</span>() <span class="dt">const</span> {
+        <span class="kw">return</span> ok_;
+    }
+    <span class="dt">bool</span> <span class="kw">operator</span>!() <span class="dt">const</span> {
+        <span class="kw">return</span> !ok_;
+    }
+};</code></pre>
+ </div> 
+</dd> 
+<dt>
+ A Seemingly Innocent Approach: 
+ <code>operator void *</code> -&lt;
+</dt> 
+<dd>
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="kw">operator</span> <span class="dt">void</span>*() <span class="dt">const</span> {
+    <span class="kw">return</span> ok_==<span class="kw">true</span> ? <span class="kw">this</span> : <span class="dv">0</span>;
+}</code></pre>
+ </div> 
+ <p>good? see this:</p> 
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp">Testable test;
+
+<span class="co">// oops...</span>
+<span class="kw">delete</span> test;</code></pre>
+ </div> 
+ <p>If you think that this situation can be saved with a little const trickery, think again: The C++ Standard explicitly allows delete expressions with pointers to const types.</p> 
+</dd> 
+<dt>
+ Almost Getting There with a Nested Class -&lt;
+</dt> 
+<dd>
+ <p>In 1996, Don Box wrote about a very clever technique in his C++ Report column a technique originally created to support testing for nullness that almost does what we came here for. It involves a conversion function to a nested type (that doesn’t even need to be defined), like so:</p> 
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+    <span class="kw">class</span> nested_class;         <span class="co">// no need to implement;</span>
+    <span class="kw">operator</span> <span class="dt">const</span> nested_class*() <span class="dt">const</span> {
+      <span class="kw">return</span> ok_ ? <span class="kw">reinterpret_cast</span>&lt;<span class="dt">const</span> nested_class*&gt;(<span class="kw">this</span>) : <span class="dv">0</span>;
+    }
+};</code></pre>
+ </div> 
+</dd> 
+<dt>
+ The Safe Bool Idiom -&lt;
+</dt> 
+<dd>
+ <p>It’s time to make these tests safe. Remember that we need to avoid unsafe conversions that allow for erroneous usage. We must also avoid overloading issues, and we definitely shouldn’t allow deletion through the conversion. So, what do we do? Without further ado, let me give you the solution in code.</p> 
+ <div class="sourceCode">
+  <pre class="sourceCode cpp"><code class="sourceCode cpp"><span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+    <span class="kw">typedef</span> <span class="dt">void</span> (Testable::*bool_type)() <span class="dt">const</span>;
+    <span class="dt">void</span> this_type_does_not_support_comparisons() <span class="dt">const</span> {}
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+    <span class="kw">operator</span> bool_type() <span class="dt">const</span> {
+        <span class="kw">return</span> ok_==<span class="kw">true</span> ?  &amp;Testable::this_type_does_not_support_comparisons : <span class="dv">0</span>;
+    }
+};</code></pre>
+ </div> 
+</dd>]]></content>
+    </entry>
+    <entry index="13">
+        <url><![CDATA[孔子1.html]]></url>
+        <title><![CDATA[(No Title) 孔子1.html]]></title>
+        <content><![CDATA[<dt>
+ 温故而知新，可以为师矣。
+</dt> 
+<dd>
+ <p>If a man keeps cherishing his old knowledge, so as continually to be acquiring new, he may be a teacher of others.</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="14">
+        <url><![CDATA[孔子1.html]]></url>
+        <title><![CDATA[(No Title) 孔子1.html]]></title>
+        <content><![CDATA[<dt>
+ 学而时习之，不亦说乎？
+</dt> 
+<dd>
+ <p>Is it not pleasant to learn with a constant perseverance and application?</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="15">
+        <url><![CDATA[孔子1.html]]></url>
+        <title><![CDATA[(No Title) 孔子1.html]]></title>
+        <content><![CDATA[<dt>
+ 敏而好学，不耻下问。
+</dt> 
+<dd>
+ <p>He was of an active nature and yet fond of learning, and he was not ashamed to ask and learn of his inferiors.</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="16">
+        <url><![CDATA[孔子2.html]]></url>
+        <title><![CDATA[(No Title) 孔子2.html]]></title>
+        <content><![CDATA[<dt>
+ 三人行，必有我师焉。择其善者而从之，其不善者而改之。
+</dt> 
+<dd>
+ <p>When I walk along with two others, they may serve me as my teachers. I will select their good qualities and follow them,their bad qualities and avoid them.</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="17">
+        <url><![CDATA[孔子2.html]]></url>
+        <title><![CDATA[(No Title) 孔子2.html]]></title>
+        <content><![CDATA[<dt>
+ 己所不欲，勿施于人。
+</dt> 
+<dd>
+ <p>What you do not want done to yourself, do not do to others.</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="18">
+        <url><![CDATA[孔子2.html]]></url>
+        <title><![CDATA[(No Title) 孔子2.html]]></title>
+        <content><![CDATA[<dt>
+ 有朋自远方来，不亦乐乎？
+</dt> 
+<dd>
+ <p>Is it not delightful to have friends coming from distant quarters?</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="19">
+        <url><![CDATA[孔子3.html]]></url>
+        <title><![CDATA[(No Title) 孔子3.html]]></title>
+        <content><![CDATA[<dt>
+ 人不知而不愠，不亦君子乎？
+</dt> 
+<dd>
+ <p>Is he not a man of complete virtue, who feels no discomposure though men may take no note of him?</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="20">
+        <url><![CDATA[孔子3.html]]></url>
+        <title><![CDATA[(No Title) 孔子3.html]]></title>
+        <content><![CDATA[<dt>
+ 道不同，不相为谋。
+</dt> 
+<dd>
+ <p>Those whose courses are different can not lay plans for one another.</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="21">
+        <url><![CDATA[孔子3.html]]></url>
+        <title><![CDATA[(No Title) 孔子3.html]]></title>
+        <content><![CDATA[<dt>
+ 唯女子与小人，为难养也。近之则不孙，远之则怨。
+</dt> 
+<dd>
+ <p>Of all people, girls and servants are the most difficult to behave to. If you are familiar with them, they lose their humility. If you maintain a reserve towards them, they are discontented.</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="22">
+        <url><![CDATA[孔子4.html]]></url>
+        <title><![CDATA[(No Title) 孔子4.html]]></title>
+        <content><![CDATA[<dt>
+ 吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲，不逾矩。
+</dt> 
+<dd>
+ <p>At fifteen I set my heart upon learning. At thirty, I planted my feet firm upon the ground. At forty, I no longer suffered from perplexities. At fifty, I knew what were the biddings of Heaven. At sixty,I heard them with docile ear. At seventy, I could follow the dictates of my own heart; for what I desired no longer overstepped the boundaries of right.</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="23">
+        <url><![CDATA[孔子4.html]]></url>
+        <title><![CDATA[(No Title) 孔子4.html]]></title>
+        <content><![CDATA[<dt>
+ 不患人之不己知，患不知人也。
+</dt> 
+<dd>
+ <p>I will not be afflicted at men’s not knowing me; I will be afflicted that I do not know men.</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="24">
+        <url><![CDATA[孔子5.html]]></url>
+        <title><![CDATA[(No Title) 孔子5.html]]></title>
+        <content><![CDATA[<dt>
+ 工欲善其事，必先利其器。
+</dt> 
+<dd>
+ <p>A craftsman who wishes to do his work well must first sharpen his tools.</p> 
+</dd>]]></content>
+    </entry>
+    <entry index="25">
+        <url><![CDATA[孔子5.html]]></url>
+        <title><![CDATA[(No Title) 孔子5.html]]></title>
+        <content><![CDATA[<dt>
+ 君子欲讷于言，而敏于行。
+</dt> 
+<dd>
+ <p>The superior man wishes to be slow in his speech and earnest in his conduct.</p> 
+</dd>]]></content>
+    </entry>
+</search>

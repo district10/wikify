@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <search>
-    <entry>
-        <content index="21" lang="cpp" type="html"><![CDATA[<span class="kw">class</span> Testable {
+    <entry index="21">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="kw">class</span> Testable {
+    <span class="dt">bool</span> ok_;
+<span class="kw">public</span>:
+    <span class="kw">explicit</span> Testable(<span class="dt">bool</span> b=<span class="kw">true</span>):ok_(b) {}
+    <span class="kw">class</span> nested_class;         <span class="co">// no need to implement;</span>
+    <span class="kw">operator</span> <span class="dt">const</span> nested_class*() <span class="dt">const</span> {
+      <span class="kw">return</span> ok_ ? <span class="kw">reinterpret_cast</span>&lt;<span class="dt">const</span> nested_class*&gt;(<span class="kw">this</span>) : <span class="dv">0</span>;
+    }
+};]]></content>
+    </entry>
+    <entry index="22">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="cpp"><![CDATA[<span class="kw">class</span> Testable {
     <span class="dt">bool</span> ok_;
     <span class="kw">typedef</span> <span class="dt">void</span> (Testable::*bool_type)() <span class="dt">const</span>;
     <span class="dt">void</span> this_type_does_not_support_comparisons() <span class="dt">const</span> {}
@@ -12,14 +27,25 @@
     }
 };]]></content>
     </entry>
-    <entry>
-        <content index="22" lang="bash" type="html"><![CDATA[<span class="kw">mvn</span> package <span class="co"># target/wikify.jar</span>]]></content>
+    <entry index="23">
+        <url><![CDATA[note.html]]></url>
+        <title><![CDATA[My Note]]></title>
+        <content lang="unknown"><![CDATA[shitshitshitshitshitshit]]></content>
     </entry>
-    <entry>
-        <content index="23" lang="bash" type="html"><![CDATA[<span class="kw">java</span> -jar target/wikify.jar
+    <entry index="24">
+        <url><![CDATA[README.html]]></url>
+        <title><![CDATA[Wikify - Build wiki from my notes]]></title>
+        <content lang="bash"><![CDATA[<span class="kw">mvn</span> package <span class="co"># target/wikify.jar</span>]]></content>
+    </entry>
+    <entry index="25">
+        <url><![CDATA[README.html]]></url>
+        <title><![CDATA[Wikify - Build wiki from my notes]]></title>
+        <content lang="bash"><![CDATA[<span class="kw">java</span> -jar target/wikify.jar
 <span class="co"># you can specify input/output dir by "-i &lt;DIR&gt;"/"--input &lt;DIR&gt;", "-o &lt;DIR&gt;"/"--output &lt;DIR&gt;".</span>]]></content>
     </entry>
-    <entry>
-        <content index="24" lang="bash" type="html"><![CDATA[<span class="kw">java</span> -jar wikify.jar -bs <span class="st">'#main-body'</span> -ns <span class="st">'#main-body &gt; ul &gt; li &gt; dl'</span> -i publish/ -o publish/]]></content>
+    <entry index="26">
+        <url><![CDATA[README.html]]></url>
+        <title><![CDATA[Wikify - Build wiki from my notes]]></title>
+        <content lang="bash"><![CDATA[<span class="kw">java</span> -jar wikify.jar -bs <span class="st">'#main-body'</span> -ns <span class="st">'#main-body &gt; ul &gt; li &gt; dl'</span> -i publish/ -o publish/]]></content>
     </entry>
 </search>
