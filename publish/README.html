@@ -49,14 +49,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Wikify - Build wiki from my notes</h1>
 </div>
-<p>build jar file:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mvn</span> package <span class="co"># target/wikify.jar</span></code></pre></div>
-<p>run jar file</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">java</span> -jar target/wikify.jar
-<span class="co"># you can specify input/output dir by &quot;-i &lt;DIR&gt;&quot;/&quot;--input &lt;DIR&gt;&quot;, &quot;-o &lt;DIR&gt;&quot;/&quot;--output &lt;DIR&gt;&quot;.</span></code></pre></div>
-<p>&#20351;&#29992;&#20030;&#20363;&#65306;</p>
+<h2 id="&#20351;&#29992;&#26041;&#27861;">&#20351;&#29992;&#26041;&#27861;</h2>
+<pre><code>make</code></pre>
+<h2 id="&#20351;&#29992;&#20030;&#20363;">&#20351;&#29992;&#20030;&#20363;</h2>
 <p>&#20026;&#25105;&#30340; <a href="https://github.com/district10/notes">&#31508;&#35760;</a> &#29983;&#25104;&#25628;&#32034;&#25968;&#25454;&#65292;&#29992;&#20110;&#39029;&#38754;&#25628;&#32034;&#65306;</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">java</span> -jar wikify.jar -bs <span class="st">&#39;#main-body&#39;</span> -ns <span class="st">&#39;#main-body &gt; ul &gt; li &gt; dl&#39;</span> -i publish/ -o publish/</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">mkdir</span> -p publish/_wikify
+<span class="kw">java</span> -jar wikify.jar -ps <span class="st">&#39;#main-body&#39;</span> -ns <span class="st">&#39;#main-body &gt; ul &gt; li &gt; dl&#39;</span> -i publish/ -o publish/ -ccs 50 -ncs 50 -pcs 20</code></pre></div>
+<p>&#29983;&#25104;&#30340; xml &#25991;&#20214;&#21487;&#20197;&#29992;&#20110;&#26816;&#32034;&#12290;&#25105;&#20889;&#20102;&#19968;&#20010;&#21069;&#31471;&#26816;&#32034;&#24037;&#20855;&#65306;<a href="https://github.com/district10/searchy">district10/searchy: Front-end of wikify</a>&#12290;</p>
+<p>&#22312;&#32447; DEMO&#65306;<a href="http://whudoc.qiniudn.com/2016/wikify_20161206/index.html">Searchy</a>&#12290;</p>
 <h2 id="&#21442;&#32771;">&#21442;&#32771;</h2>
 <ul>
 <li><a href="http://hahack.com/codes/local-search-engine-for-hexo/#%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-hexo-generator-search">jQuery-based Local Search Engine for Hexo | HaHack</a></li>

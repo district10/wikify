@@ -4,98 +4,98 @@
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[<a href="https://www.douban.com/people/sting999/status/1918804013/">sting 的广播：博士后</a>]]></headline>
-        <keywords><![CDATA[[博士后, 留下, 博士, 确实, 非常]]]></keywords>
+        <keywords><![CDATA[[不能留下, 人数比例, 博士后, 留下, 博士, 确实, 非常, 人数, 撒网, 学校, 教师, 基本上]]]></keywords>
     </entry>
     <entry index="2">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[网络设置]]></headline>
-        <keywords><![CDATA[[file, privoxy, proxy, directory, confdir]]]></keywords>
+        <keywords><![CDATA[[网络设置, file, privoxy, proxy, directory, confdir, error, network, administrator, server, load]]]></keywords>
     </entry>
     <entry index="3">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[500 Internal Privoxy Error]]></headline>
-        <keywords><![CDATA[[file, privoxy, directory, confdir, load]]]></keywords>
+        <keywords><![CDATA[[file, privoxy, directory, confdir, load, request, template, server, administrator, data]]]></keywords>
     </entry>
     <entry index="4">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[ambiguity: declaration or multiplication? -&lt;]]></headline>
-        <keywords><![CDATA[[type, object, multiplication, class, nestedtype]]]></keywords>
+        <keywords><![CDATA[[到底情况, 可能编译器, type, object, multiplication, class, nestedtype, 知道, 无法, 编译器, 可能, template]]]></keywords>
     </entry>
     <entry index="5">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[2d-vector is esier to use -&lt;]]></headline>
-        <keywords><![CDATA[[vector, clear, performance, int, num]]]></keywords>
+        <keywords><![CDATA[[vector, clear, performance, int, num, ary, col, new, depends, sure]]]></keywords>
     </entry>
     <entry index="6">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[使用 reserve 来避免不必要的重新分配 -&lt;]]></headline>
-        <keywords><![CDATA[[reserve, vector, std, size, int]]]></keywords>
+        <keywords><![CDATA[[必要重新, 避免必要, reserve, vector, std, size, int, 重新, void, nums, refs, resize]]]></keywords>
     </entry>
     <entry index="7">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[tolower, toupper, isalpha -&lt;]]></headline>
-        <keywords><![CDATA[[int, isalpha, tolower, isdigit, isspace]]]></keywords>
+        <keywords><![CDATA[[int, isalpha, tolower, isdigit, isspace, ctype, undefined, lower, behavior, case]]]></keywords>
     </entry>
     <entry index="8">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[even 
 <em>vs</em> odd，奇偶数判断 -&lt;]]></headline>
-        <keywords><![CDATA[[偶数, even, 判断, odd, vs]]]></keywords>
+        <keywords><![CDATA[[偶数判断, odd, even, 判断, 偶数, vs, odd]]]></keywords>
     </entry>
     <entry index="9">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[equal? float/double 数的判等 -&lt;]]></headline>
-        <keywords><![CDATA[[int, double, double, fabs, float]]]></keywords>
+        <keywords><![CDATA[[double, int, double, float, fabs, math, equal]]]></keywords>
     </entry>
     <entry index="10">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[文件读写，用 FILE，fscanf 或者 ifstream，getline -&lt;]]></headline>
-        <keywords><![CDATA[[const, bool, file, type, class]]]></keywords>
+        <keywords><![CDATA[[可能喜欢, 安全指针, const, bool, file, type, class, void, operator, safe, nested, testable]]]></keywords>
     </entry>
     <entry index="11">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[<a href="http://www.artima.com/cppsource/safebool.html">The Safe Bool Idiom</a> -&lt;]]></headline>
-        <keywords><![CDATA[[bool, const, type, class, nested]]]></keywords>
+        <keywords><![CDATA[[bool, const, type, class, nested, testable, ok, safe, support, test]]]></keywords>
     </entry>
     <entry index="12">
         <url><![CDATA[note.html]]></url>
         <title><![CDATA[My Note]]></title>
         <headline><![CDATA[The Goal -&lt;]]></headline>
-        <keywords><![CDATA[[const, class, type, bool, nested]]]></keywords>
+        <keywords><![CDATA[[const, class, type, bool, nested, ok, testable, operator, support, conversion]]]></keywords>
     </entry>
     <entry index="13">
         <url><![CDATA[孔子1.html]]></url>
         <title><![CDATA[(No Title) 孔子1.html]]></title>
         <headline><![CDATA[温故而知新，可以为师矣。]]></headline>
-        <keywords><![CDATA[[knowledge, continually, old, cherishing, acquiring]]]></keywords>
+        <keywords><![CDATA[[knowledge, old, continually, cherishing, acquiring, keeps, new, man, teacher]]]></keywords>
     </entry>
     <entry index="14">
         <url><![CDATA[孔子1.html]]></url>
         <title><![CDATA[(No Title) 孔子1.html]]></title>
         <headline><![CDATA[学而时习之，不亦说乎？]]></headline>
-        <keywords><![CDATA[[constant, learn, pleasant, perseverance, 时习之]]]></keywords>
+        <keywords><![CDATA[[perseverance, learn, pleasant, constant, 时习之, application]]]></keywords>
     </entry>
     <entry index="15">
         <url><![CDATA[孔子1.html]]></url>
         <title><![CDATA[(No Title) 孔子1.html]]></title>
         <headline><![CDATA[敏而好学，不耻下问。]]></headline>
-        <keywords><![CDATA[[fond, learning, nature, ashamed, ask]]]></keywords>
+        <keywords><![CDATA[[fond, learning, nature, ashamed, active, ask, learn, 不耻下问, 敏而好, inferiors]]]></keywords>
     </entry>
     <entry index="16">
         <url><![CDATA[孔子2.html]]></url>
         <title><![CDATA[(No Title) 孔子2.html]]></title>
         <headline><![CDATA[三人行，必有我师焉。择其善者而从之，其不善者而改之。]]></headline>
-        <keywords><![CDATA[[teachers, select, qualities, serve, good]]]></keywords>
+        <keywords><![CDATA[[teachers, select, qualities, serve, good, follow, walk, bad, 不善, 三人行]]]></keywords>
     </entry>
     <entry index="17">
         <url><![CDATA[孔子2.html]]></url>
@@ -107,31 +107,31 @@
         <url><![CDATA[孔子2.html]]></url>
         <title><![CDATA[(No Title) 孔子2.html]]></title>
         <headline><![CDATA[有朋自远方来，不亦乐乎？]]></headline>
-        <keywords><![CDATA[[friends, delightful, coming, distant, 不亦乐乎]]]></keywords>
+        <keywords><![CDATA[[friends, delightful, coming, distant, 不亦乐乎, 远方, quarters]]]></keywords>
     </entry>
     <entry index="19">
         <url><![CDATA[孔子3.html]]></url>
         <title><![CDATA[(No Title) 孔子3.html]]></title>
         <headline><![CDATA[人不知而不愠，不亦君子乎？]]></headline>
-        <keywords><![CDATA[[virtue, feels, discomposure, complete, men]]]></keywords>
+        <keywords><![CDATA[[virtue, feels, discomposure, complete, man, men, 君子, note]]]></keywords>
     </entry>
     <entry index="20">
         <url><![CDATA[孔子3.html]]></url>
         <title><![CDATA[(No Title) 孔子3.html]]></title>
         <headline><![CDATA[道不同，不相为谋。]]></headline>
-        <keywords><![CDATA[[courses, lay, 相为谋, different, 不同]]]></keywords>
+        <keywords><![CDATA[[different, lay, 相为谋, courses, 不同, plans]]]></keywords>
     </entry>
     <entry index="21">
         <url><![CDATA[孔子3.html]]></url>
         <title><![CDATA[(No Title) 孔子3.html]]></title>
         <headline><![CDATA[唯女子与小人，为难养也。近之则不孙，远之则怨。]]></headline>
-        <keywords><![CDATA[[girls, lose, familiar, servants, behave]]]></keywords>
+        <keywords><![CDATA[[lose, girls, servants, familiar, difficult, behave, humility, people, 为难, maintain]]]></keywords>
     </entry>
     <entry index="22">
         <url><![CDATA[孔子4.html]]></url>
         <title><![CDATA[(No Title) 孔子4.html]]></title>
         <headline><![CDATA[吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲，不逾矩。]]></headline>
-        <keywords><![CDATA[[heart, longer, 逾矩, set, desired]]]></keywords>
+        <keywords><![CDATA[[heart, longer, 逾矩, set, desired, learning, thirty, dictates, planted, seventy]]]></keywords>
     </entry>
     <entry index="23">
         <url><![CDATA[孔子4.html]]></url>
@@ -143,25 +143,25 @@
         <url><![CDATA[孔子5.html]]></url>
         <title><![CDATA[(No Title) 孔子5.html]]></title>
         <headline><![CDATA[工欲善其事，必先利其器。]]></headline>
-        <keywords><![CDATA[[work, wishes, craftsman, sharpen, 必先利其器]]]></keywords>
+        <keywords><![CDATA[[wishes, work, craftsman, sharpen, 必先利其器, tools, 工欲善其事]]]></keywords>
     </entry>
     <entry index="25">
         <url><![CDATA[孔子5.html]]></url>
         <title><![CDATA[(No Title) 孔子5.html]]></title>
         <headline><![CDATA[君子欲讷于言，而敏于行。]]></headline>
-        <keywords><![CDATA[[wishes, man, slow, speech, superior]]]></keywords>
+        <keywords><![CDATA[[wishes, man, slow, superior, speech, earnest, 敏于行, 君子, conduct]]]></keywords>
     </entry>
     <entry index="26">
         <url><![CDATA[孔子5.html]]></url>
         <title><![CDATA[(No Title) 孔子5.html]]></title>
         <headline><![CDATA[君子成人之美，不成人之恶，小人反是。]]></headline>
-        <keywords><![CDATA[[man, perfect, qualities, superior, seeks]]]></keywords>
+        <keywords><![CDATA[[君子成人之美, man, perfect, qualities, superior, seeks, 小人, bad, admirable, 成人之, mean]]]></keywords>
     </entry>
     <entry index="27">
         <url><![CDATA[孔子5.html]]></url>
         <title><![CDATA[(No Title) 孔子5.html]]></title>
         <headline><![CDATA[性相近也，习相远也。]]></headline>
-        <keywords><![CDATA[[nearly, men, alike, practice, nature]]]></keywords>
+        <keywords><![CDATA[[nearly, men, alike, practice, nature, 习相远, wide, apart, 相近]]]></keywords>
     </entry>
     <entry index="28">
         <url><![CDATA[孔子6.html]]></url>
@@ -179,12 +179,12 @@
         <url><![CDATA[孔子6.html]]></url>
         <title><![CDATA[(No Title) 孔子6.html]]></title>
         <headline><![CDATA[逝者如斯夫，不舍昼夜。]]></headline>
-        <keywords><![CDATA[[昼夜, ceasing, passes, day, 不舍]]]></keywords>
+        <keywords><![CDATA[[不舍昼夜, 昼夜, ceasing, passes, day, 不舍, night, 逝者]]]></keywords>
     </entry>
     <entry index="31">
         <url><![CDATA[孔子6.html]]></url>
         <title><![CDATA[(No Title) 孔子6.html]]></title>
         <headline><![CDATA[人无远虑，必有近忧。]]></headline>
-        <keywords><![CDATA[[takes, distant, thought, man, sorrow]]]></keywords>
+        <keywords><![CDATA[[takes, distant, thought, sorrow, man, hand, 远虑]]]></keywords>
     </entry>
 </search>

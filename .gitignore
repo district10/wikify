@@ -15,5 +15,7 @@ hs_err_pid*
 /target
 .idea/
 
-/*.xml
 /publish/*.xml
+
+/dependency-reduced-pom.xml
+/search.*.xml

@@ -35,17 +35,12 @@
     <entry index="24">
         <url><![CDATA[README.html]]></url>
         <title><![CDATA[Wikify - Build wiki from my notes]]></title>
-        <content lang="bash"><![CDATA[<span class="kw">mvn</span> package <span class="co"># target/wikify.jar</span>]]></content>
+        <content lang="unknown"><![CDATA[make]]></content>
     </entry>
     <entry index="25">
         <url><![CDATA[README.html]]></url>
         <title><![CDATA[Wikify - Build wiki from my notes]]></title>
-        <content lang="bash"><![CDATA[<span class="kw">java</span> -jar target/wikify.jar
-<span class="co"># you can specify input/output dir by "-i &lt;DIR&gt;"/"--input &lt;DIR&gt;", "-o &lt;DIR&gt;"/"--output &lt;DIR&gt;".</span>]]></content>
-    </entry>
-    <entry index="26">
-        <url><![CDATA[README.html]]></url>
-        <title><![CDATA[Wikify - Build wiki from my notes]]></title>
-        <content lang="bash"><![CDATA[<span class="kw">java</span> -jar wikify.jar -bs <span class="st">'#main-body'</span> -ns <span class="st">'#main-body &gt; ul &gt; li &gt; dl'</span> -i publish/ -o publish/]]></content>
+        <content lang="bash"><![CDATA[<span class="kw">mkdir</span> -p publish/_wikify
+<span class="kw">java</span> -jar wikify.jar -ps <span class="st">'#main-body'</span> -ns <span class="st">'#main-body &gt; ul &gt; li &gt; dl'</span> -i publish/ -o publish/ -ccs 50 -ncs 50 -pcs 20]]></content>
     </entry>
 </search>

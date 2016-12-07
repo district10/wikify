@@ -89,10 +89,6 @@
         <refs><![CDATA[[18]]]></refs>
     </entry>
     <entry type="block code">
-        <key><![CDATA[java-jartarget/wikify.jar]]></key>
-        <refs><![CDATA[[25]]]></refs>
-    </entry>
-    <entry type="block code">
         <key><![CDATA[public:]]></key>
         <refs><![CDATA[[18, 21, 22]]]></refs>
     </entry>
@@ -137,6 +133,10 @@
         <refs><![CDATA[[7]]]></refs>
     </entry>
     <entry type="block code">
+        <key><![CDATA[java-jarwikify.jar-ps'#main-body'-ns'#main-body>ul>li>dl'-ipublish/-opublish/-ccs50-ncs50-pcs20]]></key>
+        <refs><![CDATA[[25]]]></refs>
+    </entry>
+    <entry type="block code">
         <key><![CDATA[//...]]></key>
         <refs><![CDATA[[16, 15]]]></refs>
     </entry>
@@ -159,10 +159,6 @@
     <entry type="block code">
         <key><![CDATA[intisalnum(intc);]]></key>
         <refs><![CDATA[[12]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[#youcanspecifyinput/outputdirby"-i<DIR>"/"--input<DIR>","-o<DIR>"/"--output<DIR>".]]></key>
-        <refs><![CDATA[[25]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[usingnamespacestd;]]></key>
@@ -195,10 +191,6 @@
     <entry type="block code">
         <key><![CDATA[//method1]]></key>
         <refs><![CDATA[[17]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[java-jarwikify.jar-bs'#main-body'-ns'#main-body>ul>li>dl'-ipublish/-opublish/]]></key>
-        <refs><![CDATA[[26]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[//oops...]]></key>
@@ -255,6 +247,10 @@
     <entry type="block code">
         <key><![CDATA[intisblank(intc);]]></key>
         <refs><![CDATA[[12]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[mkdir-ppublish/_wikify]]></key>
+        <refs><![CDATA[[25]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[//XcanbeobjectofClass,oranestedclass.]]></key>
@@ -319,10 +315,6 @@
     <entry type="block code">
         <key><![CDATA[vector<vector<int>>ary(row_num,vector<int>(col_num,0));]]></key>
         <refs><![CDATA[[8]]]></refs>
-    </entry>
-    <entry type="block code">
-        <key><![CDATA[mvnpackage#target/wikify.jar]]></key>
-        <refs><![CDATA[[24]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[else{]]></key>
@@ -419,6 +411,10 @@
     <entry type="block code">
         <key><![CDATA[nums.reserve(25);]]></key>
         <refs><![CDATA[[10]]]></refs>
+    </entry>
+    <entry type="block code">
+        <key><![CDATA[make]]></key>
+        <refs><![CDATA[[24]]]></refs>
     </entry>
     <entry type="block code">
         <key><![CDATA[for(inti=0;i<row_num;++i){]]></key>

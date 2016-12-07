@@ -138,14 +138,15 @@ public class Main {
                                     if (note.select("dt").size() != 0) {
                                         headline.appendChild(searchNoteXml.createCDATASection(note.select("dt").first().html()));
                                     } else { // extract key sentence
-                                        List<String> keywordList = HanLP.extractKeyword(note.text(), 2);
-                                        headline.appendChild(searchNoteXml.createCDATASection(keywordList.toString()));
+                                        headline.appendChild(searchNoteXml.createCDATASection(HanLP.extractSummary(note.text(), 3).toString()));
                                     }
 
                                     // keywords
-                                    List<String> keywordList = HanLP.extractKeyword(note.text().replaceAll("[\\pP\\p{Punct}]", " ").toLowerCase(), 5);
+                                    String text = note.text().replaceAll("[\\pP\\p{Punct}]", " ").toLowerCase();
+                                    List<String> kws = HanLP.extractPhrase(note.text(), 2);
+                                    for (String s : HanLP.extractKeyword(text, 10)) { kws.add(s); }
                                     org.w3c.dom.Element keywords = searchNoteXml.createElement("keywords");
-                                    keywords.appendChild(searchNoteXml.createCDATASection(keywordList.toString()));
+                                    keywords.appendChild(searchNoteXml.createCDATASection(kws.toString()));
 
                                     // entry
                                     org.w3c.dom.Element entry = searchNoteXml.createElement("entry");
@@ -222,19 +223,22 @@ public class Main {
                         StringBuilder sb = new StringBuilder();
                         for (Element ele: terms) { sb.append(ele.text()); sb.append(" "); }
                         String fulltext = sb.toString()
+                                // .replaceAll("[\\pP\\p{Punct}]", " ")
                                 .replaceAll("\\r?\\n", " ")
-                                .replaceAll(" -< ", " ")
-                                .replaceAll("\\s+", " ");
+                                .replace(" -< ", " ")
+                                .replace(" +< ", " ")
+                                .replaceAll("\\s+", " ")
+                                .toLowerCase();
 
                         // keywords
                         org.w3c.dom.Element keywords = searchPostXml.createElement("keywords");
-                        List<String> keywordList = HanLP.extractKeyword(
-                                fulltext.replaceAll("[\\pP\\p{Punct}]", " ").toLowerCase(), 50);
+                        List<String> kws = HanLP.extractPhrase(fulltext, 5);
+                        for (String s : HanLP.extractKeyword(fulltext, 25)) { kws.add(s); }
                         // <meta name="keywords" content="pandoc, wikify" />
                         for (Element element : htmlDocument.getElementsByAttributeValue("name", "keywords")) {
-                            keywordList.add(element.attr("content"));
+                            kws.add(element.attr("content"));
                         }
-                        keywords.appendChild(searchPostXml.createCDATASection(keywordList.toString()));
+                        keywords.appendChild(searchPostXml.createCDATASection(kws.toString()));
 
                         // summary
                         org.w3c.dom.Element summary = searchPostXml.createElement("summary");
@@ -259,7 +263,7 @@ public class Main {
         {
             // line code
             {
-                for (final String lineCode : Config.lineCodes) {
+                for (final String lineCode: Config.lineCodes) {
                     int start = lineCode.indexOf('>')+1;
                     int end = lineCode.lastIndexOf('<');
                     if (start > lineCode.length()) { start = 0; }
